@@ -1,0 +1,109 @@
+.dash-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dash-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333; /* Add a background color to the header for better visibility */
+  color: white; /* Set text color for contrast */
+}
+
+.dash {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: rgb(255, 115, 0);
+}
+
+.dash-nav {
+  margin-left: 330px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Needed for dropdown positioning */
+}
+
+.list {
+  list-style: none;
+  width: 80%;
+  margin-right: 8%;
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  cursor: pointer;
+  color: azure;
+}
+
+.search-box {
+  width: 10%;
+  margin-left: 3%;
+}
+
+.statistics-reports {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: rgba(172, 172, 172, 0.286);
+  color: rgb(161, 176, 176);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box input {
+  border: 2px solid rgb(233, 233, 233);
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.dropdown-label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: azure;
+  position: relative; /* Ensure dropdown is placed correctly relative to label */
+}
+
+.dropdown-label:hover {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 20; /* Aligns dropdown to the left of the label */
+  background-color: #010101;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  text-align: left; /* Aligns text inside the dropdown */
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: white; /* Make text visible against dark background */
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+  color: black; /* Ensure text is visible on hover background */
+}
