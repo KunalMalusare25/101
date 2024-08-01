@@ -111,14 +111,16 @@ function Inprocess() {
                         openDropdownIndex === index ? "show" : ""
                       }`}
                     >
-                      <li onClick={() => handleNavigate("/")}>See</li>
-                      <li onClick={() => handleNavigate("/")}>
+                      <li onClick={() => handleNavigate("/dashboard")}>See</li>
+                      <li onClick={() => handleNavigate("/dashboard")}>
                         Create a Report
                       </li>
                       <li onClick={() => handleNavigate("/dashboard")}>
                         Upload the Document
                       </li>
-                      <li onClick={() => handleNavigate("/")}>Daily Name</li>
+                      <li onClick={() => handleNavigate("/dashboard")}>
+                        Daily Name
+                      </li>
                     </ul>
                   </div>
                 </td>

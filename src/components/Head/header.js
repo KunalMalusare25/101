@@ -95,17 +95,17 @@ const Header = () => {
               {isReportDropdownOpen && (
                 <ul className="dropdown-menu">
                   <li>
-                    <span onClick={() => handleNavigate("/make-report")}>
+                    <span onClick={() => handleNavigate("/makereport")}>
                       रिपोर्ट तयार करा
                     </span>
                   </li>
                   <li>
-                    <span onClick={() => handleNavigate("/excel-report")}>
+                    <span onClick={() => handleNavigate("/makeexcel")}>
                       एक्सेल रिपोर्ट प्रिंट करा
                     </span>
                   </li>
                   <li>
-                    <span onClick={() => handleNavigate("/info-report")}>
+                    <span onClick={() => handleNavigate("/inforeport")}>
                       कर्जदार माहिती
                     </span>
                   </li>

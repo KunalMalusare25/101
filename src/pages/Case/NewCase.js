@@ -59,11 +59,13 @@ function NewCase() {
         </p>
         <div className="btn">
           <button
+            onClick={() => handleNavigate("/dashboard")}
             style={{
               margin: "10px 0 0 15px",
               padding: "8px",
               color: "white",
               backgroundColor: "green",
+              cursor: "pointer",
               border: "none",
               borderRadius: "5px",
             }}

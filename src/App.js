@@ -11,6 +11,9 @@ import Reject from "./pages/Case/Reject";
 import RejectReason from "./pages/Case/rejectreason/RejectReason";
 import Signin from "./pages/register/signin";
 import Login from "./pages/login/login";
+import MakeReport from "./pages/reportview/makereport/MakeReport";
+import Makeexcel from "./pages/reportview/makeexcel/Makeexcel";
+import Inforeport from "./pages/reportview/jaab/Inforeport";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
           <Route path="closed" element={<Closed />} />
           <Route path="reject" element={<Reject />} />
           <Route path="rejectreason" element={<RejectReason />} />
+          <Route path="makereport" element={<MakeReport />} />
+          <Route path="makeexcel" element={<Makeexcel />} />
+          <Route path="inforeport" element={<Inforeport />} />
         </Route>
       </Routes>
     </HashRouter>
