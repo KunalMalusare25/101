@@ -1,7 +1,6 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/login/login";
-import Signin from "./pages/signup/signin";
+
 import Dashboard from "./pages/Dashboard/dashboard";
 import DefaultLayout from "./pages/DefaultLayout/DefaultLayout";
 import NewCase from "./pages/Case/NewCase";
@@ -10,6 +9,8 @@ import Inprocess from "./pages/Case/Inprocess";
 import Closed from "./pages/Case/Closed";
 import Reject from "./pages/Case/Reject";
 import RejectReason from "./pages/Case/rejectreason/RejectReason";
+import Signin from "./pages/register/signin";
+import Login from "./pages/login/login";
 
 function App() {
   return (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css";
-import Header from "../../components/Dashboard/header";
 
 function Dashboard() {
   const [currentTime, setCurrentTime] = useState(new Date());

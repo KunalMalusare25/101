@@ -1,64 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
+import { luser } from "../../components/apicall/Api";
 
 const Login = () => {
   const navigate = useNavigate();
-  const handleDashboard = () => {
-    navigate("/dashboard");
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
-  const handleSignin = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const payload = {
+        idlogin: formData.username,
+        appshortname: "craas",
+        pwd: formData.password,
+      };
+      const response = await luser(payload);
+      console.log("Login Response:", response);
+
+      if (response.Success === true) {
+        navigate("/dashboard");
+      } else {
+        setError("Invalid username or password");
+      }
+    } catch (error) {
+      setError("An error occurred during login");
+    }
+  };
+
+  const handleSignup = () => {
     navigate("/signin");
+  };
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
     <div className="logo">
-      <img src="" alt=""></img>
-
       <div>
-        <form class="form">
-          <p class="form-title">LOGIN</p>
-          <div class="input-container">
-            <input type="text" placeholder="Username" />
-            <span></span>
-          </div>
-          <div class="input-container">
-            <input type="password" placeholder="Enter password" />
-          </div>
-
-          <div className="checkbox">
-            <input type="checkbox" style={{ marginRight: "10px" }} />
-            <label>Show password</label>
-          </div>
-
-          <div className="captch" style={{ marginTop: "10px" }}>
-            <label>Captcha</label>
-            <br />
-            <textarea
-              style={{ borderRadius: "10px 10px 10px 10px", height: "40px" }}
-            ></textarea>
-          </div>
-
-          <div className="entercaptch">
-            <label style={{ marginTop: "20px" }}>Enter Captcha Text</label>
-            <br />
+        <form className="form" onSubmit={handleSubmit}>
+          <p className="form-title">LOGIN</p>
+          <div className="input-container">
             <input
               type="text"
-              placeholder=" Enter Captcha "
-              style={{
-                width: "320px",
-                height: "40px",
-                borderRadius: "10px 10px 10px 10px",
-              }}
+              name="username"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+              minLength="10"
+              maxLength="10"
+              pattern="[0-9]{10}"
             />
+            <span></span>
+          </div>
+          <div className="input-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Enter password"
+              value={formData.password}
+              onChange={handleChange}
+              minLength="10"
+              maxLength="10"
+              pattern="[0-9]{10}"
+              required
+            />
+          </div>
+
+          {error && <p className="error-message">{error}</p>}
+
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              onChange={toggleShowPassword}
+              style={{ marginRight: "10px" }}
+            />
+            <label>Show password</label>
           </div>
 
           <button
             type="submit"
-            class="submit"
+            className="submit"
             style={{ marginTop: "20px" }}
-            onClick={handleDashboard}
           >
             Login
           </button>
@@ -66,54 +103,52 @@ const Login = () => {
           <div className="remember">
             <input
               type="checkbox"
-              style={{ marginRight: "10px", marginTop: "10px" }}
+              style={{ marginRight: "10px", marginTop: "20px" }}
             />
             Remember
-            <a
-              href=""
+            <button
               style={{
                 marginLeft: "6rem",
                 fontSize: "15px",
                 marginTop: "20px",
-              }}
-            >
-              Forgot Password
-            </a>
-          </div>
-          <br />
-          <hr />
-
-          <div
-            className="registration-link"
-            style={{
-              height: "40px",
-              padding: "10px",
-              marginTop: "20px",
-              backgroundColor: "orange",
-              borderRadius: "10px 10px 10px 10px",
-            }}
-          >
-            <a
-              onClick={handleSignin}
-              style={{
-                fontSize: "15px",
-                display: "flex",
-                color: "white",
-                alignItems: "center",
-                justifyContent: "center",
+                background: "none",
+                border: "none",
+                color: "blue",
+                textDecoration: "underline",
                 cursor: "pointer",
               }}
             >
+              Forgot Password
+            </button>
+          </div>
+          <br />
+          <div
+            onClick={handleSignup}
+            className="registration-link"
+            style={{
+              textAlign: "center",
+              height: "40px",
+              padding: "5px",
+              backgroundColor: "orange",
+              borderRadius: "10px",
+              cursor: "pointer",
+            }}
+          >
+            <button
+              style={{
+                cursor: "pointer",
+                fontSize: "15px",
+                color: "white",
+                textAlign: "center",
+                background: "none",
+                border: "none",
+              }}
+            >
               नवीन फेडरेशन / संस्था रजिस्ट्रेशन करा
-            </a>
+            </button>
           </div>
         </form>
       </div>
-      {/* <div className="footer">
-        <text style={{ color: "white" }}>
-          2024 © Karwai 101. Powered by Sutradhar.
-        </text>
-      </div> */}
     </div>
   );
 };
