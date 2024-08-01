@@ -11,6 +11,7 @@ import Reject from "./pages/Case/Reject";
 import RejectReason from "./pages/Case/rejectreason/RejectReason";
 import Signin from "./pages/register/signin";
 import Login from "./pages/login/login";
+import Addnc from "./pages/Case/AddCase/addnc";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="closed" element={<Closed />} />
           <Route path="reject" element={<Reject />} />
           <Route path="rejectreason" element={<RejectReason />} />
+          <Route path="addcase" element={<Addnc />} />
         </Route>
       </Routes>
     </HashRouter>
