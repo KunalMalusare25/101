@@ -15,7 +15,6 @@ import Login from "./pages/login/login";
 import MakeReport from "./pages/reportview/makereport/MakeReport";
 import Makeexcel from "./pages/reportview/makeexcel/Makeexcel";
 import Inforeport from "./pages/reportview/jaab/Inforeport";
-
 import Addnc from "./pages/Case/AddCase/addnc";
 
 function App() {
