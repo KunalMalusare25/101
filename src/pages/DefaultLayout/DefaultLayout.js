@@ -4,7 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 function DefaultLayout() {
   const location = useLocation();
-  const hideheader = ["/"];
+  const hideheader = ["/", "/signin"];
   return (
     <div>
       <div>{!hideheader.includes(location.pathname) && <Header />}</div>

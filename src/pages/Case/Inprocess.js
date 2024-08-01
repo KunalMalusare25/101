@@ -1,44 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./inprocess.css";
+import { useNavigate } from "react-router-dom";
 
 function Inprocess() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
-  const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
-  const handleDropdownClick = (index) => {
-    if (openDropdownIndex === index) {
-      setOpenDropdownIndex(null);
-    } else {
-      setOpenDropdownIndex(index);
-    }
-  };
-
-  const handleOptionClick = (option) => {
-    alert(`Option selected: ${option}`);
-    setOpenDropdownIndex(null); // Close the dropdown after selection
-  };
-
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setOpenDropdownIndex(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const options = [
-    "See",
-    "Create a Report",
-    "Upload the Document",
-    "Daily Name",
-  ];
-
-  // Define table data as an array of objects
   const tableData = [
     {
       caseNumber: "472",
@@ -46,7 +13,7 @@ function Inprocess() {
       name: "जाधव संजय विठ्ठल",
       address: "शंकर नगर तहसील ऑफिस जानवी किराणा दुकान जुना जालना",
       mobile: "7774037519",
-      status: "Open",
+      status: "In Progress",
     },
     {
       caseNumber: "473",
@@ -58,6 +25,27 @@ function Inprocess() {
     },
     // Add more case objects as needed
   ];
+
+  const toggleDropdown = (index) => {
+    setOpenDropdownIndex(openDropdownIndex === index ? null : index);
+  };
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setOpenDropdownIndex(null);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".inprocess-dropdown-container")) {
+        setOpenDropdownIndex(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="inprocess-table">
@@ -82,7 +70,7 @@ function Inprocess() {
             नवीन केस भरा / ADD New Case +
           </button>
         </div>
-        <table className="case-table">
+        <table className="inprocess-case-table">
           <thead>
             <tr>
               <th>केस नं.</th>
@@ -91,7 +79,7 @@ function Inprocess() {
               <th>पत्ता (जिल्हा, तालुका, गाव)</th>
               <th>मोबाईल नं</th>
               <th>स्थिती</th>
-              <th>Process</th>
+              <th>प्रक्रिया</th>
             </tr>
           </thead>
           <tbody>
@@ -103,32 +91,36 @@ function Inprocess() {
                 <td>{row.address}</td>
                 <td>{row.mobile}</td>
                 <td>{row.status}</td>
-                <td ref={dropdownRef}>
-                  <button
-                    onClick={() => handleDropdownClick(index)}
-                    style={{
-                      padding: "8px",
-                      color: "white",
-                      backgroundColor: "rgb(255, 115, 0)", // Orange color
-                      border: "none",
-                      borderRadius: "5px",
-                    }}
-                  >
-                    Process
-                  </button>
-                  {openDropdownIndex === index && (
-                    <div className="dropdown">
-                      {options.map((option, optIndex) => (
-                        <div
-                          key={optIndex}
-                          onClick={() => handleOptionClick(option)}
-                          className="dropdown-item"
-                        >
-                          {option}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                <td>
+                  <div className="inprocess-dropdown-container">
+                    <button
+                      className="inprocess-case-btn"
+                      style={{
+                        padding: "8px",
+                        color: "white",
+                        backgroundColor: "rgb(255, 115, 0)",
+                        border: "none",
+                        borderRadius: "5px",
+                      }}
+                      onClick={() => toggleDropdown(index)}
+                    >
+                      <span className="inprocess-case-label">प्रक्रिया</span>
+                    </button>
+                    <ul
+                      className={`inprocess-case-dropdown ${
+                        openDropdownIndex === index ? "show" : ""
+                      }`}
+                    >
+                      <li onClick={() => handleNavigate("/")}>See</li>
+                      <li onClick={() => handleNavigate("/")}>
+                        Create a Report
+                      </li>
+                      <li onClick={() => handleNavigate("/dashboard")}>
+                        Upload the Document
+                      </li>
+                      <li onClick={() => handleNavigate("/")}>Daily Name</li>
+                    </ul>
+                  </div>
                 </td>
               </tr>
             ))}

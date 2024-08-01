@@ -3,75 +3,40 @@
   align-items: center;
   justify-content: center;
   margin-top: 30px;
+  padding: 20px;
 }
 
 .table-card {
   padding: 10px;
   height: 50rem;
   width: 70rem;
+  background: white;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+
 .btn {
   display: flex;
   justify-content: space-between;
 }
+
 .table-search {
   display: flex;
   justify-content: space-between;
 }
+
 .tbl-search-1 {
   margin-top: 20px;
   margin-left: 15px;
   display: flex;
 }
+
 .tbl-search-2 {
   margin-top: 20px;
   margin-right: 15px;
   display: flex;
 }
-/* newcase.css */
-
-.table-container {
-  padding: 20px;
-}
-
-.table-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.case-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.case-table th,
-.case-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.case-table th {
-  background-color: #f2f2f2;
-  color: black;
-}
-/* newcase.css */
-
-.table-container {
-  padding: 20px;
-}
-
-.table-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
 
 .case-table {
   width: 100%;
@@ -91,24 +56,53 @@
   color: black;
 }
 
-.dropdown {
+.case-table button {
+  background-color: rgb(255, 115, 0);
+}
+
+.new-dropdown-container {
+  position: relative;
+}
+
+.new-case-dropdown {
   position: absolute;
+  top: 30px;
+  left: 0;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 5px;
   z-index: 1000;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  display: none;
 }
 
-.dropdown-item {
-  padding: 10px;
+.new-case-dropdown.show {
+  display: block;
+  margin-left: 60%;
+}
+
+.new-case-dropdown li {
+  padding: 8px 15px;
   cursor: pointer;
 }
 
-.dropdown-item:hover {
+.new-case-dropdown li:hover {
   background-color: #f2f2f2;
 }
-.case-table button {
-  background-color: rgb(255, 115, 0);
+
+.new-case-label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: medium;
+  color: rgb(254, 254, 254);
+}
+
+.new-case-label:hover {
+  color: #007bff;
 }

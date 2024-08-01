@@ -11,3 +11,42 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+.closed-case-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.closed-case-table th,
+.closed-case-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.closed-case-table th {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.closed-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  z-index: 1000;
+}
+
+.closed-dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.closed-dropdown-item:hover {
+  background-color: #f2f2f2;
+}
+.closed-case-table button {
+  background-color: rgb(255, 115, 0);
+}

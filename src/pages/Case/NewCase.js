@@ -1,46 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./newcase.css";
+import { useNavigate } from "react-router-dom";
 
 function NewCase() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
-  const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
-  const handleDropdownClick = (index) => {
-    if (openDropdownIndex === index) {
-      setOpenDropdownIndex(null);
-    } else {
-      setOpenDropdownIndex(index);
-    }
-  };
-
-  const handleOptionClick = (option) => {
-    alert(`Option selected: ${option}`);
-    setOpenDropdownIndex(null); // Close the dropdown after selection
-  };
-
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setOpenDropdownIndex(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const options = [
-    "Improve",
-    "See",
-    "Create a Report",
-    "Transfer to AR",
-    "Upload the Document",
-    "Delete",
-  ];
-
-  // Define table data in an array
   const tableData = [
     {
       caseNumber: "472",
@@ -60,6 +25,28 @@ function NewCase() {
     },
     // You can add more rows as needed
   ];
+
+  const toggleDropdown = (index) => {
+    setOpenDropdownIndex(openDropdownIndex === index ? null : index);
+  };
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setOpenDropdownIndex(null); // Close dropdown after navigation
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".new-dropdown-container")) {
+        setOpenDropdownIndex(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="table-container">
@@ -134,7 +121,7 @@ function NewCase() {
               <th>पत्ता (जिल्हा, तालुका, गाव)</th>
               <th>मोबाईल नं</th>
               <th>स्थिती</th>
-              <th>Process</th>
+              <th>प्रक्रिया</th>
             </tr>
           </thead>
           <tbody>
@@ -146,32 +133,44 @@ function NewCase() {
                 <td>{row.address}</td>
                 <td>{row.mobile}</td>
                 <td>{row.status}</td>
-                <td ref={dropdownRef}>
-                  <button
-                    onClick={() => handleDropdownClick(index)}
-                    style={{
-                      padding: "8px",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "5px",
-                      backgroundColor: "rgb(255, 115, 0)",
-                    }}
-                  >
-                    Process
-                  </button>
-                  {openDropdownIndex === index && (
-                    <div className="dropdown">
-                      {options.map((option, optIndex) => (
-                        <div
-                          key={optIndex}
-                          onClick={() => handleOptionClick(option)}
-                          className="dropdown-item"
-                        >
-                          {option}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                <td>
+                  <div className="new-dropdown-container">
+                    <button
+                      className="new-case-btn"
+                      style={{
+                        width: "120px",
+                        padding: "8px",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "5px",
+                        backgroundColor: "rgb(255, 115, 0)",
+                      }}
+                      onClick={() => toggleDropdown(index)}
+                    >
+                      <span className="new-case-label">प्रक्रिया</span>
+                    </button>
+                    <ul
+                      className={`new-case-dropdown ${
+                        openDropdownIndex === index ? "show" : ""
+                      }`}
+                      onClick={(e) => e.stopPropagation()} // Prevent event bubbling
+                    >
+                      <li onClick={() => handleNavigate("/dashboard")}>
+                        सुधारणे
+                      </li>
+                      <li onClick={() => handleNavigate("/dashboard")}>पहा</li>
+                      <li onClick={() => handleNavigate("/dashboard")}>
+                        रिपोर्ट तयार करा
+                      </li>
+                      <li onClick={() => handleNavigate("/rejectreason")}>
+                        AR ला हस्तांतरित करा
+                      </li>
+                      <li onClick={() => handleNavigate("/dashboard")}>
+                        दस्तऐवज अपलोड करा
+                      </li>
+                      <li onClick={() => handleNavigate("/dashboard")}>हटवा</li>
+                    </ul>
+                  </div>
                 </td>
               </tr>
             ))}
