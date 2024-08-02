@@ -58,6 +58,7 @@ function Inprocess() {
         </p>
         <div className="inprocess-btn">
           <button
+          onClick={() => handleNavigate("/addcase")}
             style={{
               margin: "10px 0 0 15px",
               padding: "8px",
@@ -65,6 +66,7 @@ function Inprocess() {
               backgroundColor: "green",
               border: "none",
               borderRadius: "5px",
+              cursor: "pointer"
             }}
           >
             नवीन केस भरा / ADD New Case +
@@ -111,7 +113,7 @@ function Inprocess() {
                         openDropdownIndex === index ? "show" : ""
                       }`}
                     >
-                      <li onClick={() => handleNavigate("/dashboard")}>See</li>
+                      <li onClick={() => handleNavigate("/addcase")}>See</li>
                       <li onClick={() => handleNavigate("/dashboard")}>
                         Create a Report
                       </li>

@@ -157,10 +157,10 @@ function NewCase() {
                       }`}
                       onClick={(e) => e.stopPropagation()} // Prevent event bubbling
                     >
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/addcase")}>
                         सुधारणे
                       </li>
-                      <li onClick={() => handleNavigate("/dashboard")}>पहा</li>
+                      <li onClick={() => handleNavigate("/addcase")}>पहा</li>
                       <li onClick={() => handleNavigate("/dashboard")}>
                         रिपोर्ट तयार करा
                       </li>
