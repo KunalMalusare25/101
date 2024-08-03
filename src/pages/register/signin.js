@@ -46,17 +46,20 @@ const Signin = () => {
   }, []);
 
   useEffect(() => {
-    const loadTalukas = async () => {
-      try {
-        const response = await fetchTalukas(formData.district); 
-        console.log(response);
-        setTalukas(response.Message);
-      } catch (error) {
-        console.error("Error fetching talukas:", error);
-      }
-    };
+    if (formData.district) {
+      const loadTalukas = async () => {
+        try {
+          const response = await fetchTalukas(formData.district); 
+          setTalukas(response.Message);
+        } catch (error) {
+          console.error("Error fetching talukas:", error);
+        }
+      };
 
-    loadTalukas();
+      loadTalukas();
+    } else {
+      setTalukas([]); // Clear talukas when no district is selected
+    }
   }, [formData.district]);
 
   const handleLogin = () => {
@@ -223,8 +226,13 @@ const Signin = () => {
           </select>
         </div>
         <div className="form-group">
-          <select name="taluka" value={formData.taluka} onChange={handleChange}>
-            <option value="">Select Taluka</option>
+          <select name="taluka" 
+          value={formData.taluka} 
+          onChange={handleChange}>
+          disabled={!formData.district}
+          <option value="" disabled>
+              {formData.district ? "Select Taluka" : "Select a District First"}
+            </option>
             {talukas.map(taluka => (
                             <option key={taluka.code} value={taluka.code}>
                                 {taluka.descn}
