@@ -1,4 +1,4 @@
-import { ADD_UPDATE_DISTRICT, addupdate_society, loginuser } from "./Urls";
+import { ADD_UPDATE_DISTRICT, ADD_UPDATE_TALUKA, addupdate_society, loginuser } from "./Urls";
 import axios from 'axios';
 
 
@@ -11,6 +11,7 @@ const postAPI = async (url, body) => {
 
     
   };
+  
 
   export const AddUpdate_society = (payload) => postAPI(addupdate_society, payload);
 
@@ -18,21 +19,12 @@ const postAPI = async (url, body) => {
 
   export const fetchDistricts = (payload) => postAPI(ADD_UPDATE_DISTRICT, payload);
 
-  
-  
-  
-  // export const fetchTalukas = async (districtCode) => {
-  //   try {
-  //     const response = await axios.post(ADD_UPDATE_TALUKA, {
-  //       societycode: 1,
-  //       data: [{ parentcode: districtCode }],
-  //     });
-  //     return response.data.data;
-  //   } catch (error) {
-  //     console.error('Error fetching talukas:', error);
-  //     throw error;
-  //   }
-  // };
-  
+  export const fetchTalukas = (districtCode) => postAPI(ADD_UPDATE_TALUKA, {
+    societycode: 1,
+    parentcode: districtCode,
+    code: null,
+    descn: null
+  });
+
 
 

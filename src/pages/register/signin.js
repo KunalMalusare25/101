@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   AddUpdate_society,
   fetchDistricts,
+  fetchTalukas,
 } from "../../components/apicall/Api";
 
 const Signin = () => {
@@ -28,15 +29,14 @@ const Signin = () => {
   });
 
   const [districts, setDistricts] = useState([]);
-  // const [talukas, setTalukas] = useState([]);
+  const [talukas, setTalukas] = useState([]);
 
   useEffect(() => {
-    // Fetch districts when the component mounts
     const loadDistracts = async () => {
       try {
-        const response = await fetchDistricts(); // Adjust the function call based on your API response structure
+        const response = await fetchDistricts(); 
         console.log(response);
-        setDistricts(response.data); // Assuming response.data contains the list of districts
+        setDistricts(response.Message); 
       } catch (error) {
         console.error("Error fetching districts:", error);
       }
@@ -45,16 +45,19 @@ const Signin = () => {
     loadDistracts();
   }, []);
 
-  // useEffect(() => {
-  //     if (formData.district) {
-  //         // Fetch talukas based on the selected district
-  //         fetchTalukas(formData.district)
-  //             .then(data => setTalukas(data))
-  //             .catch(error => console.error('Error fetching talukas:', error));
-  //     } else {
-  //         setTalukas([]);
-  //     }
-  // }, [formData.district]);
+  useEffect(() => {
+    const loadTalukas = async () => {
+      try {
+        const response = await fetchTalukas(formData.district); 
+        console.log(response);
+        setTalukas(response.Message);
+      } catch (error) {
+        console.error("Error fetching talukas:", error);
+      }
+    };
+
+    loadTalukas();
+  }, [formData.district]);
 
   const handleLogin = () => {
     navigate("/");
@@ -222,11 +225,11 @@ const Signin = () => {
         <div className="form-group">
           <select name="taluka" value={formData.taluka} onChange={handleChange}>
             <option value="">Select Taluka</option>
-            {/* {talukas.map(taluka => (
+            {talukas.map(taluka => (
                             <option key={taluka.code} value={taluka.code}>
                                 {taluka.descn}
                             </option>
-                        ))} */}
+                        ))}
           </select>
         </div>
         <div className="input-container">
