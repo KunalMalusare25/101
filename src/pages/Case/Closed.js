@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./closed.css";
+import { useNavigate } from "react-router-dom";
 
 function Closed() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
-  const dropdownRef = useRef(null);
+  const dropdownRefs = useRef([]);
+  const navigate = useNavigate();
 
   const handleDropdownClick = (index) => {
     if (openDropdownIndex === index) {
@@ -13,13 +15,13 @@ function Closed() {
     }
   };
 
-  const handleOptionClick = (option) => {
-    alert(`Option selected: ${option}`);
-    setOpenDropdownIndex(null); // Close the dropdown after selection
+  const handleNavigate = (path) => {
+    navigate(path);
+    setOpenDropdownIndex(null);
   };
 
   const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    if (dropdownRefs.current.every((ref) => ref && !ref.contains(event.target))) {
       setOpenDropdownIndex(null);
     }
   };
@@ -53,6 +55,7 @@ function Closed() {
     },
     // Add more case objects as needed
   ];
+
   return (
     <div className="closed-container">
       <div className="closed-card">
@@ -85,7 +88,7 @@ function Closed() {
                 <td>{row.mobile}</td>
                 <td>{row.ArName}</td>
                 <td>{row.status}</td>
-                <td ref={dropdownRef}>
+                <td>
                   <button
                     onClick={() => handleDropdownClick(index)}
                     style={{
@@ -99,11 +102,11 @@ function Closed() {
                     Process
                   </button>
                   {openDropdownIndex === index && (
-                    <div className="closed-dropdown">
+                    <div className="closed-dropdown" ref={(el) => (dropdownRefs.current[index] = el)}>
                       {options.map((option, optIndex) => (
                         <div
                           key={optIndex}
-                          onClick={() => handleOptionClick(option)}
+                          onClick={() => handleNavigate("/addcase")}
                           className="closed-dropdown-item"
                         >
                           {option}

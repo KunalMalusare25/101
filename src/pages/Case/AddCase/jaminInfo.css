@@ -3,6 +3,22 @@
     margin-top: 20px;
   }
   
+.sec1{
+  margin-bottom: 20px;
+}
+
+.sec1 label{
+  margin-right: 10px;
+}
+
+.sec1 input{
+  width: 200px;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
   /* Form styling */
   .form-row {
     display: flex;
@@ -23,8 +39,6 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
-  
   
   /* Table styling */
   .table-container {
