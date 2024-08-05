@@ -1,0 +1,130 @@
+.make-report-interface {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+}
+/* Header Section */
+.make-report-header {
+  background-color: #1bb7ad;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.make-report-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Report Options Section */
+.make-report-options {
+  margin-bottom: 20px;
+}
+
+.make-report-radio-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.make-report-radio-option label {
+  font-size: 14px;
+}
+
+.make-report-radio-option input {
+  margin-right: 10px;
+}
+
+/* Form Section */
+.make-report-form-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.make-report-input-group,
+.make-report-select-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.make-report-input-group label,
+.make-report-select-group label {
+  margin-top: 10px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.make-report-input-group input,
+.make-report-select-group select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+/* Search Section */
+.make-report-search-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.make-report-search-section input {
+  margin-left: 55px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Button Section */
+.make-report-button-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.make-report-button-section button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.make-report-button-section .make-report-blue-button {
+  background-color: #1a73e8;
+}
+
+.make-report-button-section .make-report-orange-button {
+  background-color: #f7931e;
+}
+
+.make-report-button-section .make-report-yellow-button {
+  background-color: #fbbc05;
+  color: black;
+}
+
+.make-report-button-section .make-report-red-button {
+  background-color: #e91e63;
+}
+
+.make-report-button-section .make-report-green-button {
+  background-color: #34a853;
+}
+
+.make-report-button-section button:hover {
+  opacity: 0.8;
+}
