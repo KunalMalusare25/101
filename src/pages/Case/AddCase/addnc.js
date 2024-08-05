@@ -61,10 +61,14 @@ const Addnc = () => {
                 <label>
                   सुनावणीस हजर राहण्यासाठी अधिकार असलेली प्राधिकृत व्यक्ती
                 </label>
-                <div>
-                  <input type="radio" name="authority" value="manjur" /> मंजूर
-                  <input type="radio" name="authority" value="adhikari" />{" "}
-                  अधिकारी
+                <div className="radio">
+                  <div>
+                    <input type="radio" name="authority" value="manjur" /> मंजूर
+                  </div>
+                  <div style={{ marginLeft: "30px" }}>
+                    <input type="radio" name="authority" value="adhikari" />
+                    अधिकारी
+                  </div>
                 </div>
               </div>
               <div className="form-row">
@@ -111,6 +115,14 @@ const Addnc = () => {
                   <label style={{ marginLeft: "100px" }}>ई-मेल</label>
                   <input type="email" />
                 </div>
+
+                <div className="form-row">
+                  <label>CIN नं.</label>
+                  <input type="text" />
+                  <label style={{ marginLeft: "100px" }}>Account No</label>
+                  <input type="email" />
+                </div>
+
                 <div className="form-row">
                   <label>व्यवसाय *</label>
                   <input type="text" required />

@@ -161,10 +161,10 @@ function NewCase() {
                         सुधारणे
                       </li>
                       <li onClick={() => handleNavigate("/addcase")}>पहा</li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/makereport")}>
                         रिपोर्ट तयार करा
                       </li>
-                      <li onClick={() => handleNavigate("/rejectreason")}>
+                      <li onClick={() => handleNavigate("/tranferar")}>
                         AR ला हस्तांतरित करा
                       </li>
                       <li onClick={() => handleNavigate("/uploadDoc")}>
