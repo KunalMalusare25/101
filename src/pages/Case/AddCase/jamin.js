@@ -6,19 +6,25 @@ const JaminInfo = () => {
     <div className="jamin-info">
       <h3>जामीनदार माहिती</h3>
       <form>
-        <div className="form-row">
-          <label>जामीनदाराचे प्रकार</label>
-          <select>
-            <option>जामीनदार</option>
-            {/* Add other options */}
+        <div className='sec1'>
+          <label >जामीनदाराचे प्रकार</label>
+          <select style={{width: "100px", padding: "8px", marginRight: "5px", border: "1px solid #ccc", borderRadius: "4px"}}>
+            <option>Select</option>
+            <option value="7">भागीदार </option>
+            <option value="6">संचालक </option>
+            <option value="5">वारसदार </option>
+            <option value="4">विश्वस्त </option>
+            <option value="3">संमतीदार </option>
+            <option value="2">सहकर्जदार</option>
+            <option value="1"selected>जामिनदार </option>
           </select>
-        </div>
-        <div className="form-row">
+
           <label>नाव</label>
           <input type="text" value="शेडगे नरेंद्र खरिंद्र" readOnly />
+
           <label>वय</label>
           <input type="number" value="38" min="0" />
-        </div>
+        </div>  
         <div className="form-row">
           <label>पत्ता</label>
           <input type="text" value="आरती कॅलशवेर शनी मंदिर जुना जालना." />
