@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./addnc.css";
 import JaminInfo from "./jamin";
-import KarjadaarInfo from "./karjadaarInfo";
 
 const Addnc = () => {
   const [activeTab, setActiveTab] = useState("thakbakidar");
@@ -66,7 +65,7 @@ const Addnc = () => {
                   <div>
                     <input type="radio" name="authority" value="manjur" /> मंजूर
                   </div>
-                  <div style={{ marginLeft: "30px" }}>
+                  <div style={{ marginLeft: "10px" }}>
                     <input type="radio" name="authority" value="adhikari" />
                     अधिकारी
                   </div>
@@ -138,7 +137,12 @@ const Addnc = () => {
         )}
         {activeTab === "jamin" && <JaminInfo />}{" "}
         {/* Include the new JaminInfo component */}
-        {activeTab === "karja" && <KarjadaarInfo />}
+        {activeTab === "karja" && (
+          <div className="tabcontent active">
+            <h3>कर्जाची माहिती</h3>
+            {/* Content for कर्जाची माहिती */}
+          </div>
+        )}
       </div>
     </div>
   );
