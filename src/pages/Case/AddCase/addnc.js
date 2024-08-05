@@ -1,13 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./addnc.css";
 import JaminInfo from "./jamin";
 import KarjadaarInfo from "./karjadaarInfo";
+import { fetchDistricts, fetchTalukas } from "../../../components/apicall/Api";
 
 const Addnc = () => {
   const [activeTab, setActiveTab] = useState("thakbakidar");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+  };
+  const [formData, setFormData] = useState({
+    district: "",
+    taluka: "",
+  });
+  const [districts, setDistricts] = useState([]);
+  const [talukas, setTalukas] = useState([]);
+
+  useEffect(() => {
+    const loadDistracts = async () => {
+      try {
+        const response = await fetchDistricts(); 
+        console.log(response);
+        setDistricts(response.Message); 
+      } catch (error) {
+        console.error("Error fetching districts:", error);
+      }
+    };
+
+    loadDistracts();
+  }, []);
+
+  useEffect(() => {
+    if (formData.district) {
+      const loadTalukas = async () => {
+        try {
+          const response = await fetchTalukas(formData.district); 
+          setTalukas(response.Message);
+        } catch (error) {
+          console.error("Error fetching talukas:", error);
+        }
+      };
+
+      loadTalukas();
+    } else {
+      setTalukas([]); // Clear talukas when no district is selected
+    }
+  }, [formData.district]);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
   return (
@@ -95,15 +141,32 @@ const Addnc = () => {
                 </div>
                 <div className="form-row-nc">
                   <label>जिल्हा *</label>
-                  <select required>
-                    <option>Select</option>
-                    {/* Add other options */}
-                  </select>
+                  <select
+            name="district"
+            value={formData.district}
+            onChange={handleChange}
+          >
+            <option value="">Select District</option>
+            {districts.map((district) => (
+              <option key={district.code} value={district.code}>
+                {district.descn}
+              </option>
+            ))}
+          </select>
                   <label style={{ marginLeft: "100px" }}>तालुका *</label>
-                  <select required>
-                    <option>Select</option>
-                    {/* Add other options */}
-                  </select>
+                  <select name="taluka" 
+                  value={formData.taluka} 
+                  onChange={handleChange}>
+                  disabled={!formData.district}
+                  <option value="" disabled>
+              {formData.district ? "Select Taluka" : "Select a District First"}
+            </option>
+            {talukas.map(taluka => (
+                            <option key={taluka.code} value={taluka.code}>
+                                {taluka.descn}
+                            </option>
+                        ))}
+          </select>
                 </div>
                 <div className="form-row-nc">
                   <label>गाव *</label>
