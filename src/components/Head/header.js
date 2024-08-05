@@ -44,7 +44,12 @@ const Header = () => {
 
   return (
     <>
-      <div className="dash-header">all details</div>
+      <div className="dash-header">
+        all details
+        <div className="headimg">
+          <img src="\images\shoe_image.png" alt="shoes-img" />
+        </div>
+      </div>
 
       <div className="dash">
         <div className="dash-nav">

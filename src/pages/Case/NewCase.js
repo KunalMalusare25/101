@@ -167,7 +167,7 @@ function NewCase() {
                       <li onClick={() => handleNavigate("/rejectreason")}>
                         AR ला हस्तांतरित करा
                       </li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/uploadDoc")}>
                         दस्तऐवज अपलोड करा
                       </li>
                       <li onClick={() => handleNavigate("/dashboard")}>हटवा</li>

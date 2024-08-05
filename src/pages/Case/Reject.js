@@ -107,7 +107,7 @@ function Reject() {
                         openDropdownIndex === index ? "show" : ""
                       }`}
                     >
-                      <li onClick={() => handleNavigate("/dashboard")}>See</li>
+                      <li onClick={() => handleNavigate("/addcase")}>See</li>
                       <li onClick={() => handleNavigate("/dashboard")}>
                         Improve
                       </li>
