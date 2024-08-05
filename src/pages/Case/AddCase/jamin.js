@@ -1,14 +1,17 @@
-import React from 'react';
-import './jaminInfo.css'; 
+import React from "react";
+import "./JaminInfo.css";
 
 const JaminInfo = () => {
   return (
     <div className="jamin-info">
       <h3>जामीनदार माहिती</h3>
       <form>
-        <div className='sec1'>
-          <label >जामीनदाराचे प्रकार</label>
-          <select style={{width: "100px", padding: "8px", marginRight: "5px", border: "1px solid #ccc", borderRadius: "4px"}}>
+        <div className="jamin-info-sec1">
+          <label>जामीनदाराचे प्रकार</label>
+          <select
+            className="jamin-info-select"
+            style={{ marginLeft: "31px", width: "200px" }}
+          >
             <option>Select</option>
             <option value="7">भागीदार </option>
             <option value="6">संचालक </option>
@@ -16,49 +19,66 @@ const JaminInfo = () => {
             <option value="4">विश्वस्त </option>
             <option value="3">संमतीदार </option>
             <option value="2">सहकर्जदार</option>
-            <option value="1"selected>जामिनदार </option>
+            <option value="1" selected>
+              जामिनदार
+            </option>
           </select>
 
-          <label>नाव</label>
-          <input type="text" value="शेडगे नरेंद्र खरिंद्र" readOnly />
+          <label style={{ marginLeft: "50px" }}>नाव</label>
+          <input
+            style={{ marginLeft: "50px" }}
+            type="text"
+            value="शेडगे नरेंद्र खरिंद्र"
+            readOnly
+            className="jamin-info-input"
+          />
 
-          <label>वय</label>
-          <input type="number" value="38" min="0" />
-        </div>  
-        <div className="form-row">
-          <label>पत्ता</label>
-          <input type="text" value="आरती कॅलशवेर शनी मंदिर जुना जालना." />
-          <label>पिन</label>
-          <input type="text" value="431203" />
+          <label style={{ marginLeft: "50px" }}>वय</label>
+          <input
+            style={{ marginLeft: "50px" }}
+            type="number"
+            value="38"
+            min="0"
+            className="jamin-info-input"
+          />
         </div>
-        <div className="form-row">
+        <div className="jamin-info-form-row">
+          <label>पत्ता</label>
+          <input
+            type="text"
+            value="आरती कॅलशवेर शनी मंदिर जुना जालना."
+            className="jamin-info-input"
+          />
+          <label>पिन</label>
+          <input type="text" value="431203" className="jamin-info-input" />
+        </div>
+        <div className="jamin-info-form-row">
           <label>जिल्हा</label>
-          <select>
+          <select className="jamin-info-select">
             <option>जालना</option>
             {/* Add other options */}
           </select>
           <label>तालुका</label>
-          <select>
+          <select className="jamin-info-select">
             <option>जालना</option>
             {/* Add other options */}
           </select>
           <label>गाव</label>
-          <input type="text" value="जालना" />
+          <input type="text" value="जालना" className="jamin-info-input" />
         </div>
-        <div className="form-row">
+        <div className="jamin-info-form-row">
           <label>मोबाईल नं.</label>
-          <input type="text" value="8806622311" />
+          <input type="text" value="8806622311" className="jamin-info-input" />
           <label>ई-मेल</label>
-          <input type="email" />
+          <input type="email" className="jamin-info-input" />
         </div>
-        <div className="form-row">
+        <div className="jamin-info-form-row">
           <label>व्यवसाय</label>
-          <input type="text" value="व्यवसाय" />
+          <input type="text" value="व्यवसाय" className="jamin-info-input" />
         </div>
-        
       </form>
 
-      <div className="table-container">
+      <div className="jamin-info-table-container">
         <table>
           <thead>
             <tr>
