@@ -1,5 +1,5 @@
 /* Overall container */
-.addnc-container {
+.addnc-container-nc {
   font-family: Arial, sans-serif;
   max-width: 60%;
   margin: 0 auto;
@@ -11,14 +11,14 @@
 }
 
 /* Tab buttons */
-.tabs {
+.tabs-nc {
   display: flex;
   border-bottom: 1px solid #ccc;
   background-color: #f1f1f1;
   padding: 0 10px;
 }
 
-.tablinks {
+.tablinks-nc {
   background-color: inherit;
   border: none;
   outline: none;
@@ -29,22 +29,22 @@
   margin: 0 5px;
 }
 
-.tablinks:hover {
+.tablinks-nc:hover {
   background-color: #ddd;
 }
 
-.tablinks.active {
+.tablinks-nc.active-nc {
   background-color: #ffffff;
   border-bottom: 2px solid #000;
 }
 
 /* Tab content */
-.tabcontent {
+.tabcontent-nc {
   display: none;
   padding: 20px;
 }
 
-.tabcontent.active {
+.tabcontent-nc.active-nc {
   display: block;
 }
 
@@ -53,34 +53,33 @@ form {
   margin-top: 20px;
 }
 
-.form-row {
+.form-row-nc {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.form-row label {
+.form-row-nc label {
   width: 150px;
   margin-right: 10px;
 }
 
-.form-row input,
-.form-row select {
+.form-row-nc input,
+.form-row-nc select {
   flex: 1;
   padding: 8px;
-
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.form-section {
+.form-section-nc {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #ccc;
 }
 
-.submit-btn {
+.submit-btn-nc {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -93,13 +92,13 @@ form {
   cursor: pointer;
 }
 
-.submit-btn:hover {
+.submit-btn-nc:hover {
   background-color: #0056b3;
 }
-.radio {
+
+.radio-nc {
   height: 4%;
   width: 40%;
   display: flex;
-
   margin-right: 45%;
 }
