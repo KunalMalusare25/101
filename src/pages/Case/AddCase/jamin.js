@@ -49,7 +49,7 @@ const JaminInfo = () => {
           <label>व्यवसाय</label>
           <input type="text" value="व्यवसाय" />
         </div>
-        <button type="submit" className="submit-btn">जतन करा</button>
+        
       </form>
 
       <div className="table-container">
