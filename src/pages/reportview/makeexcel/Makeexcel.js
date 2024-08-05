@@ -2,19 +2,19 @@ import React from "react";
 import "./makeexcel.css";
 function Makeexcel() {
   return (
-    <div className="make-excel">
-      <div className="excel-card">
+    <div className="rep_make-excel">
+      <div className="rep_excel-card">
         <h2>एक्सेल रिपोर्ट प्रिंट करा</h2>
         <hr />
         <br />
-        <div className="excel">
-          <div className="startdate">
+        <div className="rep_excel">
+          <div className="rep_startdate">
             <h4>तारखेपासून</h4>
-            <input type="date" className="excel-iptext" />
+            <input type="date" className="rep_excel-iptext" />
           </div>
-          <div className="enddate">
+          <div className="rep_enddate">
             <h4>तारखेपर्यंत</h4>
-            <input type="date" className="excel-iptext" />
+            <input type="date" className="rep_excel-iptext" />
           </div>
         </div>
         <div
@@ -23,6 +23,7 @@ function Makeexcel() {
             height: "60px",
           }}
         >
+          <div className="rep_btns">
           <button type="submit" style={{ background: "rgb(35, 134, 202)" }}>
             तारखेपासून
           </button>
@@ -32,6 +33,8 @@ function Makeexcel() {
           <button type="submit" style={{ background: "rgb(241, 53, 61)" }}>
             Download Excel
           </button>
+          </div>
+         
         </div>
       </div>
     </div>

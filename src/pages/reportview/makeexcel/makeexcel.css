@@ -1,17 +1,17 @@
-.make-excel {
+.rep_make-excel {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 5%;
 }
-.excel-card {
+.rep_excel-card {
   padding: 10px;
   height: 20rem;
   width: 70rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-.excel-card h3 {
+.rep_excel-card h3 {
   height: 40px;
   padding: 5px;
   color: rgb(0, 0, 0);
@@ -19,14 +19,13 @@
   justify-content: center;
   text-align: center;
 }
-.excel {
+.rep_excel {
   width: 100%;
   height: 150px;
-  border: 1px solid rgb(0, 0, 0);
   margin-top: 20px;
   font-size: 20px;
 }
-.excel-iptext {
+.rep_excel-iptext {
   width: 100%;
   height: 40px;
   font-size: larger;
@@ -34,19 +33,24 @@
   margin-top: 25px;
   justify-content: space-evenly;
 }
-.excel-card button {
-  width: 15%;
-  height: 35px;
+
+.rep_btns{
+  display: flex;
+}
+
+.rep_excel-card button {
+  width: 20%;
+  height: 40px;
   margin: 10px 0px 0px 20px;
   border-radius: 10px;
   color: white;
   font-size: 1rem;
 }
-.excel {
+.rep_excel {
   display: flex;
 }
 
-.startdate {
+.rep_startdate {
   width: 25%;
   justify-content: center;
   text-align: center;
@@ -54,7 +58,7 @@
   margin-right: 30px;
 }
 
-.enddate {
+.rep_enddate {
   width: 25%;
   justify-content: center;
   text-align: center;
