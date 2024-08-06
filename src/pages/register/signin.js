@@ -122,7 +122,7 @@ const Signin = () => {
   };
 
   return (
-    <div className="container">
+    <div className="zzcontainer">
       <form className="form" onSubmit={handleSubmit}>
         <p className="form-title">REGISTRATION</p>
         <div className="form-group">
