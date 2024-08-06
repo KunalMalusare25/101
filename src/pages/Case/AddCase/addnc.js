@@ -20,9 +20,9 @@ const Addnc = () => {
   useEffect(() => {
     const loadDistracts = async () => {
       try {
-        const response = await fetchDistricts(); 
+        const response = await fetchDistricts();
         console.log(response);
-        setDistricts(response.Message); 
+        setDistricts(response.Message);
       } catch (error) {
         console.error("Error fetching districts:", error);
       }
@@ -35,7 +35,7 @@ const Addnc = () => {
     if (formData.district) {
       const loadTalukas = async () => {
         try {
-          const response = await fetchTalukas(formData.district); 
+          const response = await fetchTalukas(formData.district);
           setTalukas(response.Message);
         } catch (error) {
           console.error("Error fetching talukas:", error);
@@ -88,11 +88,7 @@ const Addnc = () => {
             <form>
               <div className="form-row-nc">
                 <label>नोंदणी क्र.</label>
-                <input
-                  type="text"
-                  value="JAL/RSR/CR/421/04 Date : 12/08/20"
-                  readOnly
-                />
+                <input type="text" value="" />
               </div>
               <div className="form-row-nc">
                 <label>ब्रँच चे नाव</label>
@@ -103,7 +99,7 @@ const Addnc = () => {
                 <label>संस्थेचा पत्ता</label>
                 <input type="text" />
                 <label>मॅनेजरचे नाव</label>
-                <input type="text" value="देशपांडे विवेक" readOnly />
+                <input type="text" />
               </div>
 
               <div className="form-row-nc">
@@ -142,31 +138,35 @@ const Addnc = () => {
                 <div className="form-row-nc">
                   <label>जिल्हा *</label>
                   <select
-            name="district"
-            value={formData.district}
-            onChange={handleChange}
-          >
-            <option value="">Select District</option>
-            {districts.map((district) => (
-              <option key={district.code} value={district.code}>
-                {district.descn}
-              </option>
-            ))}
-          </select>
+                    name="district"
+                    value={formData.district}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select District</option>
+                    {districts.map((district) => (
+                      <option key={district.code} value={district.code}>
+                        {district.descn}
+                      </option>
+                    ))}
+                  </select>
                   <label style={{ marginLeft: "100px" }}>तालुका *</label>
-                  <select name="taluka" 
-                  value={formData.taluka} 
-                  onChange={handleChange}>
-                  disabled={!formData.district}
-                  <option value="" disabled>
-              {formData.district ? "Select Taluka" : "Select a District First"}
-            </option>
-            {talukas.map(taluka => (
-                            <option key={taluka.code} value={taluka.code}>
-                                {taluka.descn}
-                            </option>
-                        ))}
-          </select>
+                  <select
+                    name="taluka"
+                    value={formData.taluka}
+                    onChange={handleChange}
+                  >
+                    disabled={!formData.district}
+                    <option value="" disabled>
+                      {formData.district
+                        ? "Select Taluka"
+                        : "Select a District First"}
+                    </option>
+                    {talukas.map((taluka) => (
+                      <option key={taluka.code} value={taluka.code}>
+                        {taluka.descn}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="form-row-nc">
                   <label>गाव *</label>

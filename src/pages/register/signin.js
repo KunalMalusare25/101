@@ -34,9 +34,9 @@ const Signin = () => {
   useEffect(() => {
     const loadDistracts = async () => {
       try {
-        const response = await fetchDistricts(); 
+        const response = await fetchDistricts();
         console.log(response);
-        setDistricts(response.Message); 
+        setDistricts(response.Message);
       } catch (error) {
         console.error("Error fetching districts:", error);
       }
@@ -49,7 +49,7 @@ const Signin = () => {
     if (formData.district) {
       const loadTalukas = async () => {
         try {
-          const response = await fetchTalukas(formData.district); 
+          const response = await fetchTalukas(formData.district);
           setTalukas(response.Message);
         } catch (error) {
           console.error("Error fetching talukas:", error);
@@ -122,19 +122,19 @@ const Signin = () => {
   };
 
   return (
-    <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <p className="form-title">REGISTRATION</p>
-        <div className="form-group">
-          <div className="input-group">
-            <div className="icheck-inline">
+    <div className="sin-container">
+      <form className="sin-form" onSubmit={handleSubmit}>
+        <p className="sin-form-title">REGISTRATION</p>
+        <div className="sin-form-group">
+          <div className="sin-input-group">
+            <div className="sin-icheck-inline">
               <label style={{ marginRight: "20px" }}>
                 <input
                   type="radio"
                   name="type"
                   checked={selectedType === "S"}
                   onChange={handleRadioChange}
-                  className="icheck"
+                  className="sin-icheck"
                   value="S"
                 />{" "}
                 संस्था
@@ -145,7 +145,7 @@ const Signin = () => {
                   name="type"
                   checked={selectedType === "F"}
                   onChange={handleRadioChange}
-                  className="icheck"
+                  className="sin-icheck"
                   value="F"
                 />{" "}
                 फेडरेशन
@@ -153,10 +153,10 @@ const Signin = () => {
             </div>
           </div>
         </div>
-        <div className="form-group">
+        <div className="sin-form-group">
           <select
             name="sanstha_type"
-            className="form-control"
+            className="sin-form-control"
             value={sansthaType}
             onChange={handleTypeChange}
           >
@@ -166,9 +166,9 @@ const Signin = () => {
             <option value="3">हौसिंग सोसायटी</option>
           </select>
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="संस्था नाव"
             name="descn"
@@ -177,9 +177,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="वर्णन"
             name="descn1"
@@ -188,9 +188,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="PAN नंबर"
             name="pan"
@@ -199,9 +199,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="GST नंबर"
             name="gstn"
@@ -211,9 +211,10 @@ const Signin = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="sin-form-group">
           <select
             name="district"
+            className="sin-form-control"
             value={formData.district}
             onChange={handleChange}
           >
@@ -225,24 +226,27 @@ const Signin = () => {
             ))}
           </select>
         </div>
-        <div className="form-group">
-          <select name="taluka" 
-          value={formData.taluka} 
-          onChange={handleChange}>
-          disabled={!formData.district}
-          <option value="" disabled>
+        <div className="sin-form-group">
+          <select
+            name="taluka"
+            className="sin-form-control"
+            value={formData.taluka}
+            onChange={handleChange}
+            disabled={!formData.district}
+          >
+            <option value="" disabled>
               {formData.district ? "Select Taluka" : "Select a District First"}
             </option>
-            {talukas.map(taluka => (
-                            <option key={taluka.code} value={taluka.code}>
-                                {taluka.descn}
-                            </option>
-                        ))}
+            {talukas.map((taluka) => (
+              <option key={taluka.code} value={taluka.code}>
+                {taluka.descn}
+              </option>
+            ))}
           </select>
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="पत्ता"
             name="address"
@@ -251,9 +255,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="पत्ता (शहर)"
             name="address1"
@@ -262,9 +266,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="फ़ोन नंबर ( एस.टी.डी. कोडसहित )"
             name="phone"
@@ -277,9 +281,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="text"
             placeholder="संपर्क अधिकारी"
             name="contactperson"
@@ -288,9 +292,9 @@ const Signin = () => {
             required
           />
         </div>
-        <div className="input-container">
+        <div className="sin-input-container">
           <input
-            className="form-control placeholder-no-fix"
+            className="sin-form-control placeholder-no-fix"
             type="email"
             autoComplete="off"
             placeholder="इ - मेल आयडी"
@@ -300,11 +304,11 @@ const Signin = () => {
             required
           />
         </div>
-        <button className="submit" type="submit">
+        <button className="sin-submit" type="submit">
           जतन करा
         </button>
 
-        <p className="signup-link">
+        <p className="sin-signup-link">
           Already registered!
           <button
             style={{ marginLeft: "5px", cursor: "pointer" }}

@@ -48,21 +48,24 @@ function MakeReport() {
       {/* Form Section */}
       <div className="make-report-form-section">
         <div className="make-report-input-group">
-          <label>वसूली दाखला देणार्‍या कार्यालयाचा पत्ता</label>
+          <label>
+            वसुली दाखला देणाऱ्या कार्यालयाचा पत्ता (पत्त्या मध्ये जिल्हा व
+            तालुका लिहू नये.)
+          </label>
           <input
             type="text"
             placeholder="वसूली दाखला देणार्‍या कार्यालयाचा पत्ता"
           />
         </div>
         <div className="make-report-select-group">
-          <label>वसूली दाखला देणार्‍या कार्यालयाचा जिल्हा</label>
+          <label>वसुली दाखला देणाऱ्या कार्यालयाचा जिल्हा</label>
           <select>
             <option>जिल्हा निवडा / Select Jilha</option>
             {/* Add options dynamically if needed */}
           </select>
         </div>
         <div className="make-report-select-group">
-          <label>वसूली दाखला देणार्‍या कार्यालयाचा तालुका</label>
+          <label>वसुली दाखला देणाऱ्या कार्यालयाचा तालुका</label>
           <select>
             <option>तालुका निवडा / Select Taluka</option>
             {/* Add options dynamically if needed */}
@@ -78,7 +81,7 @@ function MakeReport() {
       {/* Search Section */}
       <div className="make-report-search-section">
         <label>Search </label>
-        <input type="text" placeholder="थकबाकीदार यादी Search..." />
+        <input type="text" placeholder="थकबाकीदार यादी  Search..." />
       </div>
       <hr />
 
