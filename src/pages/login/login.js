@@ -49,11 +49,11 @@ const Login = () => {
   };
 
   return (
-    <div className="logo">
+    <div className="login-logo">
       <div>
-        <form className="form" onSubmit={handleSubmit}>
-          <p className="form-title">LOGIN</p>
-          <div className="input-container">
+        <form className="login-form" onSubmit={handleSubmit}>
+          <p className="login-form-title">LOGIN</p>
+          <div className="login-input-container">
             <input
               type="text"
               name="username"
@@ -67,7 +67,7 @@ const Login = () => {
             />
             <span></span>
           </div>
-          <div className="input-container">
+          <div className="login-input-container">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -81,9 +81,9 @@ const Login = () => {
             />
           </div>
 
-          {error && <p className="error-message">{error}</p>}
+          {error && <p className="login-error-message">{error}</p>}
 
-          <div className="checkbox">
+          <div className="login-checkbox">
             <input
               type="checkbox"
               onChange={toggleShowPassword}
@@ -94,13 +94,13 @@ const Login = () => {
 
           <button
             type="submit"
-            className="submit"
+            className="login-submit"
             style={{ marginTop: "20px" }}
           >
             Login
           </button>
 
-          <div className="remember">
+          <div className="login-remember">
             <input
               type="checkbox"
               style={{ marginRight: "10px", marginTop: "20px" }}
@@ -108,7 +108,7 @@ const Login = () => {
             Remember
             <button
               style={{
-                marginLeft: "6rem",
+                marginLeft: "100px",
                 fontSize: "15px",
                 marginTop: "20px",
                 background: "none",
@@ -124,7 +124,7 @@ const Login = () => {
           <br />
           <div
             onClick={handleSignup}
-            className="registration-link"
+            className="login-registration-link"
             style={{
               textAlign: "center",
               height: "40px",
