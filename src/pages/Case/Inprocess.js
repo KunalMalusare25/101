@@ -58,7 +58,7 @@ function Inprocess() {
         </p>
         <div className="inprocess-btn">
           <button
-          onClick={() => handleNavigate("/addcase")}
+            onClick={() => handleNavigate("/addcase")}
             style={{
               margin: "10px 0 0 15px",
               padding: "8px",
@@ -66,7 +66,7 @@ function Inprocess() {
               backgroundColor: "green",
               border: "none",
               borderRadius: "5px",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             नवीन केस भरा / ADD New Case +
@@ -114,15 +114,13 @@ function Inprocess() {
                       }`}
                     >
                       <li onClick={() => handleNavigate("/addcase")}>See</li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/makereport")}>
                         Create a Report
                       </li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/uploadDoc")}>
                         Upload the Document
                       </li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
-                        Daily Name
-                      </li>
+                      <li onClick={() => handleNavigate("/roz")}>Daily Name</li>
                     </ul>
                   </div>
                 </td>

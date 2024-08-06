@@ -3,7 +3,7 @@ import "./uploadDoc.css";
 
 function UploadDoc() {
   return (
-    <div className="upload-form">
+    <div className="doc-upload-form">
       <h2>दस्तऐवज अपलोड करा</h2>
       <hr />
       <form>
@@ -17,18 +17,20 @@ function UploadDoc() {
           ["नमुना यु", "१०० रुपयांचा कोर्ट फी स्टॅम्प"],
           ["रजिस्टर्ड पोस्ट पावतीसह समन्स", "रोजनामा - २"],
         ].map((pair, index) => (
-          <div className="form-row" key={index}>
-            <div className="form-group">
+          <div className="doc-form-row" key={index}>
+            <div className="doc-form-group">
               <label>{pair[0]}</label>
               <input type="file" />
             </div>
-            <div className="form-group">
+            <div className="doc-form-group">
               <label>{pair[1]}</label>
               <input type="file" />
             </div>
           </div>
         ))}
-        <button type="submit">जतन करा</button>
+        <button className="doc-btn " type="submit">
+          जतन करा
+        </button>
       </form>
     </div>
   );

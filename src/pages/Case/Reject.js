@@ -108,13 +108,13 @@ function Reject() {
                       }`}
                     >
                       <li onClick={() => handleNavigate("/addcase")}>See</li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/addcase")}>
                         Improve
                       </li>
                       <li onClick={() => handleNavigate("/rejectreason")}>
                         Case Reject Reason
                       </li>
-                      <li onClick={() => handleNavigate("/dashboard")}>
+                      <li onClick={() => handleNavigate("/tranferar")}>
                         Transfer to AR
                       </li>
                     </ul>

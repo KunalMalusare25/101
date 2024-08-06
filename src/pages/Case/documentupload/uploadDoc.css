@@ -1,4 +1,4 @@
-.upload-form {
+.doc-upload-form {
   max-width: 60%;
   margin: 0 auto;
   padding: 20px;
@@ -8,38 +8,40 @@
   margin-top: 20px;
 }
 
-.upload-form h2 {
+.doc-upload-form h2 {
   margin-bottom: 20px;
   color: #00796b;
 }
 
-.form-row {
+.doc-form-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.form-group {
+.doc-form-group {
   flex: 1;
   margin-right: 10px;
 }
 
-.form-group:last-child {
+.doc-form-group:last-child {
   margin-right: 0;
 }
 
-.form-group label {
+.doc-form-group label {
   display: block;
   margin-bottom: 5px;
 }
 
-.form-group input[type="file"] {
+.doc-form-group input[type="file"] {
   width: 80%;
   padding: 8px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+
+  border: 1px solid black;
 }
 
-button[type="submit"] {
+.doc-btn[type="submit"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -51,6 +53,6 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.doc-btn [type="submit"]:hover {
   background-color: #005a4f;
 }

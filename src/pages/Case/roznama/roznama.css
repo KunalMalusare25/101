@@ -1,0 +1,209 @@
+/* Responsive Flexbox Layout */
+.roz-app-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 60%;
+  max-width: 100%;
+  margin: 0 auto; /* Centers the container */
+  box-sizing: border-box;
+}
+
+.roz-form-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.roz-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.roz-header div {
+  flex: 1;
+  margin-right: 20px;
+  min-width: 250px;
+}
+
+.roz-header h2,
+.roz-header p,
+.roz-header h3,
+.roz-header ul {
+  margin: 0;
+  font-size: 1rem; /* Responsive typography */
+}
+
+.roz-roznamcha-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.roz-form-row {
+  margin-bottom: 15px;
+}
+
+.roz-form-row label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+.roz-form-row input,
+.roz-form-row select,
+.roz-form-row textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* Responsive input size */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.roz-form-row input:focus,
+.roz-form-row select:focus,
+.roz-form-row textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.roz-table-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  overflow-x: auto; /* To prevent overflow issues on smaller screens */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .roz-header {
+    flex-direction: column;
+  }
+
+  .roz-header div {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .roz-form-row input,
+  .roz-form-row select,
+  .roz-form-row textarea,
+  button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 0.9rem;
+    border: none;
+    position: relative;
+  }
+
+  th {
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding: 8px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  td:last-child {
+    margin-bottom: 10px;
+  }
+
+  .roz-table-container {
+    overflow-x: auto;
+  }
+
+  .roz-app-container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .roz-header h2,
+  .roz-header p,
+  .roz-header h3 {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+}

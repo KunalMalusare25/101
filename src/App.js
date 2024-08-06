@@ -17,6 +17,7 @@ import Makeexcel from "./pages/reportview/makeexcel/Makeexcel";
 import Inforeport from "./pages/reportview/jaab/Inforeport";
 import Addnc from "./pages/Case/AddCase/addnc";
 import UploadDoc from "./pages/Case/documentupload/UploadDoc";
+import Roznama from "./pages/Case/roznama/Roznama";
 
 function App() {
   return (
@@ -32,13 +33,12 @@ function App() {
           <Route path="closed" element={<Closed />} />
           <Route path="reject" element={<Reject />} />
           <Route path="rejectreason" element={<RejectReason />} />
-
           <Route path="makereport" element={<MakeReport />} />
           <Route path="makeexcel" element={<Makeexcel />} />
           <Route path="inforeport" element={<Inforeport />} />
-
           <Route path="addcase" element={<Addnc />} />
           <Route path="uploadDoc" element={<UploadDoc />} />
+          <Route path="roz" element={<Roznama />} />
         </Route>
       </Routes>
     </HashRouter>
