@@ -28,8 +28,6 @@ const JaminInfo = () => {
           <input
             style={{ marginLeft: "50px" }}
             type="text"
-            value="शेडगे नरेंद्र खरिंद्र"
-            readOnly
             className="jamin-info-input"
           />
 
@@ -37,20 +35,15 @@ const JaminInfo = () => {
           <input
             style={{ marginLeft: "50px" }}
             type="number"
-            value="38"
             min="0"
             className="jamin-info-input"
           />
         </div>
         <div className="jamin-info-form-row">
           <label>पत्ता</label>
-          <input
-            type="text"
-            value="आरती कॅलशवेर शनी मंदिर जुना जालना."
-            className="jamin-info-input"
-          />
+          <input type="text" className="jamin-info-input" />
           <label>पिन</label>
-          <input type="text" value="431203" className="jamin-info-input" />
+          <input type="text" className="jamin-info-input" />
         </div>
         <div className="jamin-info-form-row">
           <label>जिल्हा</label>
@@ -64,17 +57,17 @@ const JaminInfo = () => {
             {/* Add other options */}
           </select>
           <label>गाव</label>
-          <input type="text" value="जालना" className="jamin-info-input" />
+          <input type="text" className="jamin-info-input" />
         </div>
         <div className="jamin-info-form-row">
           <label>मोबाईल नं.</label>
-          <input type="text" value="8806622311" className="jamin-info-input" />
+          <input type="text" className="jamin-info-input" />
           <label>ई-मेल</label>
           <input type="email" className="jamin-info-input" />
         </div>
         <div className="jamin-info-form-row">
           <label>व्यवसाय</label>
-          <input type="text" value="व्यवसाय" className="jamin-info-input" />
+          <input type="text" className="jamin-info-input" />
         </div>
       </form>
 

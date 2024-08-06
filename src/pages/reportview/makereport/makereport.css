@@ -45,7 +45,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-top: 30px;
 }
 
@@ -73,12 +73,12 @@
 }
 /* Search Section */
 .make-report-search-section {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .make-report-search-section input {
-  margin-left: 55px;
+  margin-left: 20px;
   width: 90%;
   padding: 10px;
   border-radius: 5px;

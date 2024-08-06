@@ -1,42 +1,42 @@
-.reject-reason {
+.reject-reason-main {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
 }
 
-.reason-card {
+.reject-reason-card {
   padding: 10px;
   height: 20rem;
   width: 70rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-.reason-card h3 {
+.reject-reason-card h3 {
   height: 40px;
   padding: 5px;
   color: white;
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: rgb(249, 107, 5);
+  background-color: rgb(255, 125, 4);
 }
-.remark {
+.reason-remark {
   width: 100%;
   height: 150px;
   border: 2px solid rgb(0, 0, 0);
   margin-top: 20px;
   font-size: 20px;
 }
-.iptext {
+.reject-iptext {
   width: 30%;
   height: 40px;
   font-size: larger;
   margin-left: 20px;
   margin-top: 20px;
 }
-.reason-card button {
-  width: 100px;
+.reject-reason-card button {
+  width: 50px;
   height: 35px;
   margin: 10px 0px 0px 20px;
   color: white;
