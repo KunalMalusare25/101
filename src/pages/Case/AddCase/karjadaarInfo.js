@@ -164,6 +164,78 @@ const KarjadaarInfo = () => {
             <input type="number" placeholder="₹" />
           </div>
         </div>
+        <div className="form-section">
+        <div className="form-group">
+          <label>अर्जदारास झालेला खर्च</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>अर्जाला लावलेल्या स्टँप</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>कोर्ट फी स्टँप रक्कम</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>एखुण झालेली स्टँपची रक्कम</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>चौकशी फी व खर्च</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>इतर खर्च पोस्टेज इत्यादी</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>एखुण खर्च</label>
+          <input type="number" placeholder="₹" />
+        </div>
+      </div>
+
+      <div className="form-section">
+        <div className="form-group">
+          <label>जामीनदारांनी धारणाचा खर्च</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>कारवाईची फी</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>अन्‍य खर्च</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>एखुण खर्च</label>
+          <input type="number" placeholder="₹" />
+        </div>
+        <div className="form-group">
+          <label>अर्जाची रक्कम</label>
+          <input type="number" placeholder="₹" />
+        </div>
+      </div>
+      <div className="form-section">
+        <h3>तारणाची माहिती</h3>
+        <div className="form-group">
+          <label>पगारीची माहिती</label>
+          <input type="text" />
+        </div>
+        <div className="form-group">
+          <label>जंगम मालमत्तेचे वर्णन</label>
+          <input type="text" />
+        </div>
+        <div className="form-group">
+          <label>स्थावर मालमत्तेचे वर्णन</label>
+          <input type="text" />
+        </div>
+        <div className="form-group">
+          <label>इतर मालमत्तेचे वर्णन</label>
+          <input type="text" />
+        </div>
+      </div>
       </form>
     </div>
   );

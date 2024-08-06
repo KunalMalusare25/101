@@ -7,6 +7,7 @@
   padding: 1rem;
   max-width: 350px;
   border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .sin-form-title {
@@ -40,7 +41,7 @@
 
 .sin-input-container input,
 .sin-form-group select {
-  width: 100%; /* Makes the input width responsive to the parent container */
+  width: 82%; 
   max-width: 100%; /* Ensure inputs don’t exceed the width of the container */
 }
 
