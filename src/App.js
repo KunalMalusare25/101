@@ -17,7 +17,10 @@ import Makeexcel from "./pages/reportview/makeexcel/Makeexcel";
 import Inforeport from "./pages/reportview/jaab/Inforeport";
 import Addnc from "./pages/Case/AddCase/addnc";
 import UploadDoc from "./pages/Case/documentupload/UploadDoc";
+
 import Roznama from "./pages/Case/roznama/Roznama";
+
+import Old from "./pages/old/old";
 
 function App() {
   return (
@@ -38,7 +41,10 @@ function App() {
           <Route path="inforeport" element={<Inforeport />} />
           <Route path="addcase" element={<Addnc />} />
           <Route path="uploadDoc" element={<UploadDoc />} />
+
           <Route path="roz" element={<Roznama />} />
+
+          <Route path="old-karwai" element={<Old />} />
         </Route>
       </Routes>
     </HashRouter>
