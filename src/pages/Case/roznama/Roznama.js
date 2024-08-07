@@ -61,7 +61,7 @@ function Roznama() {
             <label>पुढील दिनांक:</label>
             <input type="date" defaultValue="2024-06-13" />
           </div>
-          <button type="submit">जतन करा</button>
+          <button className="roz-btn" type="submit">जतन करा</button>
         </form>
       </div>
       <div className="roz-table-container">

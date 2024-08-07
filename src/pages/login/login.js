@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./login.css";
 import { useNavigate } from "react-router-dom";
 import { luser } from "../../components/apicall/Api";
 
@@ -30,7 +29,7 @@ const Login = () => {
       const response = await luser(payload);
       console.log("Login Response:", response);
 
-      if (response.Success === true) {
+      if (response.Success) {
         navigate("/dashboard");
       } else {
         setError("Invalid username or password");
@@ -49,11 +48,11 @@ const Login = () => {
   };
 
   return (
-    <div className="login-logo">
-      <div>
-        <form className="login-form" onSubmit={handleSubmit}>
-          <p className="login-form-title">LOGIN</p>
-          <div className="login-input-container">
+    <div className="flex items-center justify-center h-screen">
+      <div className="bg-white p-8 rounded-lg shadow-custom max-w-sm w-full">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <h1 className="text-2xl font-semibold text-center">LOGIN</h1>
+          <div>
             <input
               type="text"
               name="username"
@@ -64,10 +63,10 @@ const Login = () => {
               minLength="10"
               maxLength="10"
               pattern="[0-9]{10}"
+              className="w-full p-3 border rounded-lg outline-none focus:border-blue-500"
             />
-            <span></span>
           </div>
-          <div className="login-input-container">
+          <div>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -78,75 +77,42 @@ const Login = () => {
               maxLength="10"
               pattern="[0-9]{10}"
               required
+              className="w-full p-3 border rounded-lg outline-none focus:border-blue-500"
             />
           </div>
-
-          {error && <p className="login-error-message">{error}</p>}
-
-          <div className="login-checkbox">
+          {error && <p className="text-red-500">{error}</p>}
+          <div className="flex items-center">
             <input
               type="checkbox"
               onChange={toggleShowPassword}
-              style={{ marginRight: "10px" }}
+              className="mr-2"
             />
             <label>Show password</label>
           </div>
-
           <button
             type="submit"
-            className="login-submit"
-            style={{ marginTop: "20px" }}
+            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
           >
             Login
           </button>
-
-          <div className="login-remember">
-            <input
-              type="checkbox"
-              style={{ marginRight: "10px", marginTop: "20px" }}
-            />
-            Remember
+          <div className="flex items-center justify-between mt-4">
+            <div>
+              <input type="checkbox" className="mr-2" />
+              <label>Remember</label>
+            </div>
             <button
-              style={{
-                marginLeft: "130px",
-
-                fontSize: "15px",
-                marginTop: "20px",
-                background: "none",
-                border: "none",
-                color: "blue",
-                textDecoration: "underline",
-                cursor: "pointer",
-              }}
+              type="button"
+              className="text-blue-500 underline"
+              onClick={() => navigate("/forgot-password")}
             >
               Forgot Password
             </button>
           </div>
-          <br />
           <div
             onClick={handleSignup}
-            className="login-registration-link"
-            style={{
-              textAlign: "center",
-              height: "40px",
-              padding: "5px",
-              backgroundColor: "orange",
-              borderRadius: "10px",
-              cursor: "pointer",
-            }}
+            className="text-center mt-4 bg-orange-500 text-white py-2 rounded-lg cursor-pointer"
           >
-            <button
-              style={{
-                cursor: "pointer",
-                fontSize: "15px",
-                color: "white",
-                textAlign: "center",
-                background: "none",
-                border: "none",
-              }}
-            >
-              नवीन फेडरेशन / संस्था रजिस्ट्रेशन करा
-            </button>
+            <span>नवीन फेडरेशन / संस्था रजिस्ट्रेशन करा</span>
           </div>
         </form>
       </div>
