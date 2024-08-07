@@ -115,12 +115,14 @@
 
   margin: 10px 0px 0px 17%;
 }
-.head-profile {
+/* .head-profile {
   margin: 10px 0px 0px 850px;
-  width: 65px;
-  height: 60px;
-  background-color: rgb(251, 255, 0);
-  border-radius: 90%;
+} */
+.profile-name {
+  width: 10%;
+  height: 30px;
+
+  margin: 20px 0px 0px 10px;
 }
 
 @media (max-width: 768px) {
