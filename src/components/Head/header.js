@@ -47,8 +47,9 @@ const Header = () => {
       <div className="dash-header">
         all details
         <div className="headimg">
-          <img src="\images\shoe_image.png" alt="shoes-img" />
+          <img src="\images\shoe_image.png" alt="company-logo" />
         </div>
+        <div className="head-profile"></div>
       </div>
 
       <div className="dash">
