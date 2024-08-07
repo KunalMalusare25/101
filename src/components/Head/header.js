@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./header.css";
 import { useNavigate } from "react-router-dom";
+import profile from "../../images/ProfileIcon.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -45,11 +46,21 @@ const Header = () => {
   return (
     <>
       <div className="dash-header">
-        all details
         <div className="headimg">
           <img src="\images\shoe_image.png" alt="company-logo" />
         </div>
-        <div className="head-profile"></div>
+        <div className="head-profile">
+          <img
+            src={profile}
+            alt="profile-image"
+            style={{ margin: "10px 0px 0px 800px" }}
+          />
+        </div>
+        <div className="profile-name">
+          <label>
+            <u>kunal Malusare</u>
+          </label>
+        </div>
       </div>
 
       <div className="dash">
