@@ -30,24 +30,18 @@ function Dashboard() {
 
   return (
     <>
-      <div className="dash-statistics">
-        <h2>
-          Dashboard{" "}
-          <p style={{ fontSize: "15px", padding: "10px" }}>
-            statistics & reports
-          </p>
-        </h2>
+      <div className="Das-dash-statistics">
+        <h2>Dashboard</h2>
+        <p>Statistics & Reports</p>
       </div>
-      {/* <Header /> */}
-      <div className="DashContain">
-        <div className="card1">
-          <h2 style={{ marginTop: "10px", color: "green" }}>CASE SUMMARY</h2>
-          <div className="date-time">
+      <div className="Das-DashContain">
+        <div className="Das-card Das-card1">
+          <h2 className="Das-card-title">CASE SUMMARY</h2>
+          <div className="Das-date-time">
             <h5>{formatDate(currentTime)}</h5>
           </div>
-          <br />
           <hr />
-          <div className="cases-list">
+          <div className="Das-cases-list">
             <div>
               <label>Total Cases</label>
               <h1>178</h1>
@@ -62,17 +56,16 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="card2">
-          <h2 style={{ marginTop: "10px", color: "green" }}>
-            STAMP CALCULATION
-          </h2>
-          <br />
-          <hr />
-          <button onClick={() => handleButtonClick("केस नं. १ (पहा)")}>
+        <div className="Das-card Das-card2">
+          <h2 className="Das-card-title">STAMP CALCULATION</h2>
+          <button
+            className="Das-button"
+            onClick={() => handleButtonClick("केस नं. १ (पहा)")}
+          >
             केस नं. १ (पहा)
           </button>
           {activeButton === "केस नं. १ (पहा)" && (
-            <div className="clicked-text">
+            <div className="Das-clicked-text">
               <p>
                 जर एकूण वसूलपात्र रक्कम एक लाख रु. पेक्षा कमी असल्यास ,
                 स्टॅम्पची रक्कम = (एकूण वसूलपात्र रक्कम ) X (२%) किंवा १०० रु.
@@ -106,11 +99,14 @@ function Dashboard() {
               </p>
             </div>
           )}
-          <button onClick={() => handleButtonClick("केस नं. २ (पहा)")}>
+          <button
+            className="Das-button"
+            onClick={() => handleButtonClick("केस नं. २ (पहा)")}
+          >
             केस नं. २ (पहा)
           </button>
           {activeButton === "केस नं. २ (पहा)" && (
-            <div className="clicked-text">
+            <div className="Das-clicked-text">
               <p>
                 जर एकूण वसूलपात्र रक्कम एक लाख रु. पेक्षा कमी असल्यास ,
                 स्टॅम्पची रक्कम = (एकूण वसूलपात्र रक्कम ) X (२%) किंवा १०० रु.
