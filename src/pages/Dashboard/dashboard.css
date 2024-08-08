@@ -1,3 +1,4 @@
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,29 @@ body {
   padding: 0 15px;
 }
 
-.Das-card {
+/* Fixed height for left card */
+.Das-card-left {
+  padding: 20px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  flex: 1 1 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  height: 300px; /* Fixed height for left card */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden; /* Prevent card size changes */
+}
+
+.Das-card-left:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px;
+}
+
+/* Dynamic height for right card */
+.Das-card-right {
   padding: 20px;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -30,14 +53,12 @@ body {
   flex: 1 1 calc(50% - 20px);
   max-width: calc(50% - 20px);
   transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden; /* Added to prevent card size changes */
+  overflow: hidden; /* Prevent card size changes */
+  display: flex;
+  flex-direction: column;
 }
 
-.Das-card:hover {
-  transform: translateY(-5px);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px;
-}
-
+/* Common styles */
 .Das-card-title {
   margin-bottom: 15px;
   color: #4a90e2;
@@ -70,12 +91,13 @@ body {
 }
 
 .Das-cases-list h1 {
+  cursor: pointer;
   margin-top: 10px;
   color: #ff8c00;
   font-size: 2.5rem;
 }
 
-.Das-card2 button {
+.Das-card-right button {
   background-color: #4a90e2;
   color: white;
   font-size: 1.2rem;
@@ -88,7 +110,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.Das-card2 button:hover {
+.Das-card-right button:hover {
   background-color: #357abd;
 }
 
@@ -102,7 +124,7 @@ body {
   border-radius: 5px;
   padding: 20px;
   overflow: auto;
-  max-height: 300px; /* Added to limit the height */
+  max-height: 300px; /* Limit the height */
   transition: max-height 0.3s ease; /* Smooth transition */
 }
 
@@ -123,10 +145,13 @@ body {
   font-size: 1.2rem;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
-  .Das-card {
+  .Das-card-left,
+  .Das-card-right {
     flex: 1 1 100%;
     max-width: 100%;
+    height: auto; /* Allow height to adapt based on content */
   }
 
   .Das-dash-statistics h2 {

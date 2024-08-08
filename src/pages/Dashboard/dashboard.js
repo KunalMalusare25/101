@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  const handlecaseNavigate = (path) => {
+    navigate(path);
+  };
   const [currentTime, setCurrentTime] = useState(new Date());
   const [activeButton, setActiveButton] = useState("");
 
@@ -35,7 +41,7 @@ function Dashboard() {
         <p>Statistics & Reports</p>
       </div>
       <div className="Das-DashContain">
-        <div className="Das-card Das-card1">
+        <div className="Das-card-left">
           <h2 className="Das-card-title">CASE SUMMARY</h2>
           <div className="Das-date-time">
             <h5>{formatDate(currentTime)}</h5>
@@ -44,19 +50,19 @@ function Dashboard() {
           <div className="Das-cases-list">
             <div>
               <label>Total Cases</label>
-              <h1>178</h1>
+              <h1 onClick={() => handlecaseNavigate("/newcase")}>178</h1>
             </div>
             <div>
               <label>InProgress Cases</label>
-              <h1>117</h1>
+              <h1 onClick={() => handlecaseNavigate("/inprocess")}>117</h1>
             </div>
             <div>
               <label>Closed Cases</label>
-              <h1>0</h1>
+              <h1 onClick={() => handlecaseNavigate("/closed")}>2</h1>
             </div>
           </div>
         </div>
-        <div className="Das-card Das-card2">
+        <div className="Das-card-right ">
           <h2 className="Das-card-title">STAMP CALCULATION</h2>
           <button
             className="Das-button"
@@ -64,6 +70,7 @@ function Dashboard() {
           >
             केस नं. १ (पहा)
           </button>
+
           {activeButton === "केस नं. १ (पहा)" && (
             <div className="Das-clicked-text">
               <p>
