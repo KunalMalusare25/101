@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./newcase.css";
 import { useNavigate } from "react-router-dom";
 
 function NewCase() {
@@ -23,7 +22,7 @@ function NewCase() {
       mobile: "8888899999",
       status: "In Progress",
     },
-    // You can add more rows as needed
+    // Add more rows as needed
   ];
 
   const toggleDropdown = (index) => {
@@ -35,7 +34,6 @@ function NewCase() {
     setOpenDropdownIndex(null); // Close dropdown after navigation
   };
 
-  // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest(".new-dropdown-container")) {
@@ -49,135 +47,86 @@ function NewCase() {
   }, []);
 
   return (
-    <div className="table-container">
-      <div className="table-card">
-        <p style={{ marginTop: "10px", color: "orange", padding: "10px" }}>
-          <b style={{ padding: "10px" }}>नवीन केस यादी</b>
-          <br />
-          <br />
-          <hr />
+    <div className="flex flex-col py-10 px-4 lg:px-0">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-6xl mx-auto">
+        <p className="text-orange-600 font-bold mb-4">
+          नवीन केस यादी
+          <hr className="my-4" />
         </p>
-        <div className="btn">
+        <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
           <button
             onClick={() => handleNavigate("/addcase")}
-            style={{
-              margin: "10px 0 0 15px",
-              padding: "8px",
-              color: "white",
-              backgroundColor: "green",
-              cursor: "pointer",
-              border: "none",
-              borderRadius: "5px",
-            }}
+            className="bg-green-500 text-white py-2 px-4 rounded-lg mb-2 sm:mb-0"
           >
             नवीन केस भरा / ADD New Case +
           </button>
-          <button
-            style={{
-              margin: "10px 15px 0 0 ",
-              padding: "8px",
-              color: "white",
-              backgroundColor: "green",
-              border: "none",
-              borderRadius: "5px",
-            }}
-          >
+          <button className="bg-green-500 text-white py-2 px-4 rounded-lg">
             Print
           </button>
         </div>
 
-        <div className="table-search">
-          <div className="tbl-search-1">
-            <p>Show</p>
+        <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
+          <div className="flex items-center mb-2 sm:mb-0">
+            <p className="mr-2">Show</p>
             <input
               type="search"
-              style={{
-                padding: "5px",
-                width: "80px",
-                borderRadius: "5px",
-                margin: "0 5px 0 5px",
-              }}
+              className="p-1 w-24 rounded border border-gray-300"
+              placeholder="Search"
             />
-            <p>Entries</p>
+            <p className="ml-2">Entries</p>
           </div>
-          <div className="tbl-search-2">
-            <p>Search:</p>
+          <div className="flex items-center">
+            <p className="mr-2">Search:</p>
             <input
               type="search"
-              style={{
-                padding: "5px",
-                width: "150px",
-                borderRadius: "5px",
-                margin: "0 0 0 5px",
-              }}
+              className="p-1 w-48 rounded border border-gray-300"
+              placeholder="Search"
             />
           </div>
         </div>
 
-        <table className="case-table">
-          <thead>
-            <tr>
-              <th>केस नं.</th>
-              <th>शाखा</th>
-              <th>नाव</th>
-              <th>पत्ता (जिल्हा, तालुका, गाव)</th>
-              <th>मोबाईल नं</th>
-              <th>स्थिती</th>
-              <th>प्रक्रिया</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((row, index) => (
-              <tr key={index}>
-                <td>{row.caseNumber}</td>
-                <td>{row.branch}</td>
-                <td>{row.name}</td>
-                <td>{row.address}</td>
-                <td>{row.mobile}</td>
-                <td>{row.status}</td>
-                <td>
-                  <div className="new-dropdown-container">
-                    <button
-                      className="new-case-btn"
-                      style={{
-                        width: "120px",
-                        padding: "8px",
-                        color: "white",
-                        border: "none",
-                        borderRadius: "5px",
-                        backgroundColor: "rgb(255, 115, 0)",
-                      }}
-                      onClick={() => toggleDropdown(index)}
-                    >
-                      <span className="new-case-label">प्रक्रिया</span>
-                    </button>
-                    <ul
-                      className={`new-case-dropdown ${
-                        openDropdownIndex === index ? "show" : ""
-                      }`}
-                      onClick={(e) => e.stopPropagation()} // Prevent event bubbling
-                    >
-                      <li onClick={() => handleNavigate("/addcase")}>
-                        सुधारणे
-                      </li>
-                      <li onClick={() => handleNavigate("/addcase")}>पहा</li>
-                      <li onClick={() => handleNavigate("/makereport")}>
-                        रिपोर्ट तयार करा
-                      </li>
-                      <li onClick={() => handleNavigate("/tranferar")}>
-                        AR ला हस्तांतरित करा
-                      </li>
-                      <li onClick={() => handleNavigate("/uploadDoc")}>
-                        दस्तऐवज अपलोड करा
-                      </li>
-                      <li onClick={() => handleNavigate("/dashboard")}>हटवा</li>
-                    </ul>
-                  </div>
-                </td>
+        {/* Responsive Table */}
+        <div className="block md:hidden">
+          {tableData.map((row, index) => (
+            <div key={index} className="border rounded-lg p-4 mb-4 bg-white shadow">
+              <div className="font-bold text-lg mb-2">Case Number: {row.caseNumber}</div>
+              <p><span className="font-semibold">Branch:</span> {row.branch}</p>
+              <p><span className="font-semibold">Name:</span> {row.name}</p>
+              <p><span className="font-semibold">Address:</span> {row.address}</p>
+              <p><span className="font-semibold">Mobile:</span> {row.mobile}</p>
+              <p><span className="font-semibold">Status:</span> {row.status}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Table for larger screens */}
+        <div className="hidden md:block overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Case Number</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Branch</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Address</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mobile</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {tableData.map((row, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{row.caseNumber}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.branch}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.address}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.mobile}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

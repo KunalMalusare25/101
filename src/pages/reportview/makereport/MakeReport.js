@@ -1,130 +1,113 @@
 import React from "react";
-import "./makereport.css";
+
 function MakeReport() {
   return (
-    <div className="make-report-interface">
+    <div className="font-sans p-5 max-w-4xl mx-auto">
       {/* Header Section */}
-      <div className="make-report-header">
-        <h1>रिपोर्ट</h1>
+      <div className="bg-teal-500 text-white flex items-center p-3 rounded mb-5">
+        <h1 className="text-xl">रिपोर्ट</h1>
       </div>
 
       {/* Report Options Section */}
-      <div className="make-report-options">
-        <h4> वसुली दाखला देणाऱ्या अधिकाऱ्याचे पद / हुद्दा निवडावा : </h4>
-        <div className="make-report-radio-option">
-          <input type="radio" id="option1" name="reportOption" />
-          <label htmlFor="option1">उपनिबंधक, सहकारी संस्था</label>
-        </div>
-        <div className="make-report-radio-option">
-          <input type="radio" id="option2" name="reportOption" />
-          <label htmlFor="option2">उपनिबंधक, सहकारी संस्था (परसेवा)</label>
-        </div>
-        <div className="make-report-radio-option">
-          <input type="radio" id="option3" name="reportOption" />
-          <label htmlFor="option3">
-            सहा.निबंधक सह.संस्था (परसेवा), म.राज्य सह. पतसंस्था फेडरेशन मर्या.
-          </label>
-        </div>
-        <div className="make-report-radio-option">
-          <input type="radio" id="option4" name="reportOption" />
-          <label htmlFor="option4">सहाय्यक निबंधक, सहकारी संस्था</label>
-        </div>
-        <div className="make-report-radio-option">
-          <input type="radio" id="option5" name="reportOption" />
-          <label htmlFor="option5">
-            सहाय्यक निबंधक, सहकारी संस्था (परसेवा)
-          </label>
-        </div>
-        <div className="make-report-radio-option">
-          <input type="radio" id="option5" name="reportOption" />
-          <label htmlFor="option6">
-            सहाय्यक निबंधक (परसेवा),अहमदनगर जिल्हा पतसंस्थांचे सहकारी फेडरेशन
-            मर्या. अहमदनगर
-          </label>
+      <div className="mb-5">
+        <h4 className="text-lg mb-3">वसुली दाखला देणाऱ्या अधिकाऱ्याचे पद / हुद्दा निवडावा:</h4>
+        <div className="flex flex-col space-y-2">
+          {[
+            { id: 'option1', text: 'उपनिबंधक, सहकारी संस्था' },
+            { id: 'option2', text: 'उपनिबंधक, सहकारी संस्था (परसेवा)' },
+            { id: 'option3', text: 'साहा.निबंधक सह.संस्था (परसेवा), म.राज्य सह. पतसंस्था फेडरेशन मर्या.' },
+            { id: 'option4', text: 'सहाय्यक निबंधक, सहकारी संस्था' },
+            { id: 'option5', text: 'सहाय्यक निबंधक, सहकारी संस्था (परसेवा)' },
+            { id: 'option6', text: 'सहाय्यक निबंधक (परसेवा), अहमदनगर जिल्हा पतसंस्थांचे सहकारी फेडरेशन मर्या. अहमदनगर' }
+          ].map(option => (
+            <div key={option.id} className="flex items-center space-x-2">
+              <input type="radio" id={option.id} name="reportOption" className="form-radio" />
+              <label htmlFor={option.id} className="text-sm">{option.text}</label>
+            </div>
+          ))}
         </div>
       </div>
       <hr />
 
       {/* Form Section */}
-      <div className="make-report-form-section">
-        <div className="make-report-input-group">
-          <label>
-            वसुली दाखला देणाऱ्या कार्यालयाचा पत्ता (पत्त्या मध्ये जिल्हा व
-            तालुका लिहू नये.)
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-8">
+        <div className="flex flex-col">
+          <label className="font-bold text-sm mb-1">
+            वसुली दाखला देणाऱ्या कार्यालयाचा पत्ता (पत्त्या मध्ये जिल्हा व तालुका लिहू नये.)
           </label>
           <input
             type="text"
             placeholder="वसूली दाखला देणार्‍या कार्यालयाचा पत्ता"
+            className="p-2 border border-gray-300 rounded"
           />
         </div>
-        <div className="make-report-select-group">
-          <label>वसुली दाखला देणाऱ्या कार्यालयाचा जिल्हा</label>
-          <select>
+        <div className="flex flex-col">
+          <label className="font-bold text-sm mb-1">वसुली दाखला देणाऱ्या कार्यालयाचा जिल्हा</label>
+          <select className="p-2 border border-gray-300 rounded">
             <option>जिल्हा निवडा / Select Jilha</option>
             {/* Add options dynamically if needed */}
           </select>
         </div>
-        <div className="make-report-select-group">
-          <label>वसुली दाखला देणाऱ्या कार्यालयाचा तालुका</label>
-          <select>
+        <div className="flex flex-col">
+          <label className="font-bold text-sm mb-1">वसुली दाखला देणाऱ्या कार्यालयाचा तालुका</label>
+          <select className="p-2 border border-gray-300 rounded">
             <option>तालुका निवडा / Select Taluka</option>
             {/* Add options dynamically if needed */}
           </select>
         </div>
-        <div className="make-report-input-group">
-          <label>सुनावणीसाठी हजर राहण्याचे ठिकाण</label>
-          <input type="text" placeholder="सुनावणीसाठी हजर राहण्याचे ठिकाण" />
+        <div className="flex flex-col">
+          <label className="font-bold text-sm mb-1">सुनावणीसाठी हजर राहण्याचे ठिकाण</label>
+          <input
+            type="text"
+            placeholder="सुनावणीसाठी हजर राहण्याचे ठिकाण"
+            className="p-2 border border-gray-300 rounded"
+          />
         </div>
       </div>
       <hr />
 
       {/* Search Section */}
-      <div className="make-report-search-section">
-        <label>Search </label>
-        <input type="text" placeholder="थकबाकीदार यादी  Search..." />
+      <div className="my-8">
+        <label className="text-sm">Search</label>
+        <input
+          type="text"
+          placeholder="थकबाकीदार यादी Search..."
+          className="ml-2 p-2 w-full border border-gray-300 rounded"
+        />
       </div>
       <hr />
 
       {/* Button Section */}
-      <div className="make-report-button-section">
-        <button className="make-report-blue-button">पहिली नोटीस</button>
-        <button className="make-report-blue-button">अंतीम नोटीस</button>
-        <button className="make-report-blue-button">ककाम ६४</button>
-        <button className="make-report-blue-button">एपीएफेडिट</button>
-        <button className="make-report-orange-button">चालन</button>
-        <button className="make-report-yellow-button">
-          दाखल केलेल्या प्रस्तावांची एकत्रित यादी
-        </button>
-        <button className="make-report-yellow-button">
-          प्रत्येने टेबल प्रिंट करा
-        </button>
-        <button className="make-report-red-button">101 सेट - पूर्ण सेट</button>
-        <button className="make-report-blue-button">101 सेट - नमुना ग</button>
-        <button className="make-report-blue-button">
-          रजिस्टर पोष पार्सलिंग रसमस
-        </button>
-        <button className="make-report-blue-button">101 सेट - नमुना क</button>
-        <button className="make-report-blue-button">101 सेट - रोजनामा</button>
-        <button className="make-report-blue-button">
-          101 सेट - रोजनामा एक्स पार्टी
-        </button>
-        <button className="make-report-blue-button">101 सेट - जबाब</button>
-        <button className="make-report-blue-button">101 सेट - ठराव</button>
-        <button className="make-report-red-button">
-          मागणी नोटीस (प्रकर 1)
-        </button>
-        <button className="make-report-red-button">
-          मागणी नोटीस (प्रकर 2)
-        </button>
-        <button className="make-report-green-button">
-          एक रुपया ठवक विशंती पत्र
-        </button>
-        <button className="make-report-green-button">
-          दोन रुपया ठवक विशंती पत्र
-        </button>
-        <button className="make-report-green-button">
-          तीन रुपया ठवक विशंती पत्र
-        </button>
+      <div className="flex flex-wrap gap-2 mt-5">
+        {[
+          { text: 'पहिली नोटीस', color: 'bg-blue-500' },
+          { text: 'अंतीम नोटीस', color: 'bg-blue-500' },
+          { text: 'ककाम ६४', color: 'bg-blue-500' },
+          { text: 'एपीएफेडिट', color: 'bg-blue-500' },
+          { text: 'चालन', color: 'bg-orange-500' },
+          { text: 'दाखल केलेल्या प्रस्तावांची एकत्रित यादी', color: 'bg-yellow-500 text-black' },
+          { text: 'प्रत्येने टेबल प्रिंट करा', color: 'bg-yellow-500 text-black' },
+          { text: '101 सेट - पूर्ण सेट', color: 'bg-red-500' },
+          { text: '101 सेट - नमुना ग', color: 'bg-blue-500' },
+          { text: 'रजिस्टर पोष पार्सलिंग रसमस', color: 'bg-blue-500' },
+          { text: '101 सेट - नमुना क', color: 'bg-blue-500' },
+          { text: '101 सेट - रोजनामा', color: 'bg-blue-500' },
+          { text: '101 सेट - रोजनामा एक्स पार्टी', color: 'bg-blue-500' },
+          { text: '101 सेट - जबाब', color: 'bg-blue-500' },
+          { text: '101 सेट - ठराव', color: 'bg-blue-500' },
+          { text: 'मागणी नोटीस (प्रकर 1)', color: 'bg-red-500' },
+          { text: 'मागणी नोटीस (प्रकर 2)', color: 'bg-red-500' },
+          { text: 'एक रुपया ठवक विशंती पत्र', color: 'bg-green-500' },
+          { text: 'दोन रुपया ठवक विशंती पत्र', color: 'bg-green-500' },
+          { text: 'तीन रुपया ठवक विशंती पत्र', color: 'bg-green-500' }
+        ].map((btn, index) => (
+          <button
+            key={index}
+            className={`p-2 text-white rounded cursor-pointer transition-opacity hover:opacity-80 ${btn.color}`}
+          >
+            {btn.text}
+          </button>
+        ))}
       </div>
     </div>
   );
