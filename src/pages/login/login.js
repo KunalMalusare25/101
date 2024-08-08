@@ -96,13 +96,13 @@ const Login = () => {
             Login
           </button>
           <div className="flex items-center justify-between mt-4">
-            <div>
+            <div className="w-1/2 sm:w-1/2" >
               <input type="checkbox" className="mr-2" />
               <label>Remember</label>
             </div>
             <button
               type="button"
-              className="text-blue-500 underline"
+              className="text-blue-500 underline w-1/2 sm:w-1/2"
               onClick={() => navigate("/forgot-password")}
             >
               Forgot Password

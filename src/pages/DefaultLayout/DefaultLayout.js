@@ -9,7 +9,7 @@ function DefaultLayout() {
     <div>
       <div>{!hideheader.includes(location.pathname) && <Header />}</div>
       <div>
-        <Outlet />
+        {/* <Outlet /> */}
       </div>
       {/* <div>foter</div> */}
     </div>
