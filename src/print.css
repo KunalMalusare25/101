@@ -1,0 +1,19 @@
+/* print.css */
+@media print {
+    /* Hide header */
+    .print-hidden {
+      display: none;
+    }
+    
+    /* Hide default browser header/footer */
+    @page {
+      margin: 0; /* Adjust as needed */
+    }
+  
+    /* Additional styles to control print layout */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
