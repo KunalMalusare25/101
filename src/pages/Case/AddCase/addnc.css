@@ -1,7 +1,7 @@
 /* Overall container */
 .addnc-container-nc {
   font-family: Arial, sans-serif;
-  max-width: 60%;
+  max-width: 90%; /* Use a percentage for fluid width */
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -13,6 +13,7 @@
 /* Tab buttons */
 .tabs-nc {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   border-bottom: 1px solid #ccc;
   background-color: #717070;
   padding: 0 10px;
@@ -25,8 +26,10 @@
   cursor: pointer;
   padding: 10px 20px;
   transition: background-color 0.3s;
-  font-size: 16px;
-  margin: 0 5px;
+  font-size: 1rem; /* Use rem for scalability */
+  margin: 5px; /* Add margin around buttons */
+  flex: 1; /* Allow buttons to grow equally */
+  text-align: center;
 }
 
 .tablinks-nc:hover {
@@ -55,22 +58,21 @@ form {
 
 .form-row-nc {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Stack items vertically by default */
   margin-bottom: 15px;
 }
 
 .form-row-nc label {
-  width: 150px;
-  margin-right: 10px;
+  margin-bottom: 5px; /* Space between label and input */
 }
 
 .form-row-nc input,
 .form-row-nc select {
-  flex: 1;
   padding: 8px;
-  margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%; /* Make inputs full width */
+  box-sizing: border-box;
 }
 
 .form-section-nc {
@@ -90,6 +92,7 @@ form {
   justify-content: center;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%; /* Full width button */
 }
 
 .submit-btn-nc:hover {
@@ -97,8 +100,45 @@ form {
 }
 
 .radio-nc {
-  height: 4%;
-  width: 40%;
   display: flex;
-  margin-right: 45%;
+  justify-content: space-between; /* Space out radio buttons */
+  margin-right: 0;
+  width: 100%; /* Full width for responsiveness */
+  margin-bottom: 15px;
+}
+
+.radio-nc div {
+  flex: 1; /* Make radio button containers equal width */
+  text-align: center;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+  .form-row-nc {
+    flex-direction: row; /* Horizontal layout for larger screens */
+  }
+
+  .form-row-nc label {
+    width: 150px; /* Fixed width on larger screens */
+    margin-right: 10px;
+  }
+
+  .radio-nc {
+    width: 40%; /* Adjust width for larger screens */
+    margin-right: 45%;
+  }
+
+  .submit-btn-nc {
+    width: auto; /* Auto width on larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .addnc-container-nc {
+    max-width: 60%; /* Larger max-width on bigger screens */
+  }
+
+  .radio-nc {
+    width: 40%; /* Adjust width */
+  }
 }

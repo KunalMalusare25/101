@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./addnc.css";
 import JaminInfo from "./jamin";
 import KarjadaarInfo from "./karjadaarInfo";
 import { fetchDistricts, fetchTalukas } from "../../../components/apicall/Api";
@@ -57,152 +56,247 @@ const Addnc = () => {
   };
 
   return (
-    <div className="addnc-container-nc">
-      <div className="tabs-nc">
+    <div className="max-w-full md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mx-auto p-8 border border-gray-300 bg-white rounded-lg mt-5">
+      <div className="flex flex-wrap border-b border-gray-300 bg-slate-300 px-2">
         <button
-          className={`tablinks-nc ${
-            activeTab === "thakbakidar" ? "active-nc" : ""
+          className={`px-5 py-2 transition-colors duration-300 text-base m-1 ${
+            activeTab === "thakbakidar"
+              ? "bg-gray-600 border-b-2 border-black"
+              : "bg-transparent hover:bg-gray-300"
           }`}
           onClick={() => handleTabClick("thakbakidar")}
         >
           थकबाकीदार माहिती
         </button>
         <button
-          className={`tablinks-nc ${activeTab === "jamin" ? "active-nc" : ""}`}
+          className={`px-5 py-2 transition-colors duration-300 text-base m-1 ${
+            activeTab === "jamin"
+              ? "bg-gray-600 border-b-2 border-black"
+              : "bg-transparent hover:bg-gray-300"
+          }`}
           onClick={() => handleTabClick("jamin")}
         >
           जामीनदार माहिती
         </button>
         <button
-          className={`tablinks-nc ${activeTab === "karja" ? "active-nc" : ""}`}
+          className={`px-5 py-2 transition-colors duration-300 text-base m-1 ${
+            activeTab === "karja"
+              ? "bg-gray-600 border-b-2 border-black"
+              : "bg-transparent hover:bg-gray-300"
+          }`}
           onClick={() => handleTabClick("karja")}
         >
           कर्जाची माहिती
         </button>
       </div>
 
-      <div className="tab-content-nc">
+      <div className="p-5">
         {activeTab === "thakbakidar" && (
-          <div className="tabcontent-nc active-nc">
-            <h3>थकबाकीदार माहिती</h3>
+          <div>
+            <p className="text-xl font-bold">थकबाकीदार माहिती</p>
+            <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+            <br />
             <form>
-              <div className="form-row-nc">
-                <label>नोंदणी क्र.</label>
-                <input type="text" value="" />
+              <div className="mb-4">
+                <label className="block mb-2">नोंदणी क्र.</label>
+                <input
+                  type="text"
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
               </div>
-              <div className="form-row-nc">
-                <label>ब्रँच चे नाव</label>
-                <select>
-                  <option>Select</option>
-                  {/* Add other options */}
-                </select>
-                <label>संस्थेचा पत्ता</label>
-                <input type="text" />
-                <label>मॅनेजरचे नाव</label>
-                <input type="text" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label className="block mb-2">ब्रँच चे नाव</label>
+                  <select className="w-full p-2 border border-gray-300 rounded">
+                    <option>Select</option>
+                    {/* Add other options */}
+                  </select>
+                </div>
+                <div>
+                  <label className="block mb-2">संस्थेचा पत्ता</label>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded"
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2">मॅनेजरचे नाव</label>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded"
+                  />
+                </div>
               </div>
 
-              <div className="form-row-nc">
-                <label>
+              <div className="mb-4">
+                <label className="block mb-2">
                   सुनावणीस हजर राहण्यासाठी अधिकार असलेली प्राधिकृत व्यक्ती
                 </label>
-                <div className="radio-nc">
+                <div className="flex space-x-5">
                   <div>
                     <input type="radio" name="authority" value="manjur" /> मंजूर
                   </div>
-                  <div style={{ marginLeft: "20px" }}>
+                  <div>
                     <input type="radio" name="authority" value="adhikari" />
                     अधिकारी
                   </div>
                 </div>
               </div>
-              <div className="form-row-nc">
-                <label>वकिलाचे नाव</label>
-                <select>
+
+              <div className="mb-4">
+                <label className="block mb-2">वकिलाचे नाव</label>
+                <select className="w-full p-2 border border-gray-300 rounded">
                   <option>Select</option>
                   {/* Add other options */}
                 </select>
               </div>
-              <div className="form-section-nc">
-                <h3 style={{ marginTop: "10px" }}>थकबाकीदार</h3>
-                <div className="form-row-nc">
-                  <label>नाव *</label>
-                  <input type="text" required />
+              <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+
+              <div className="mt-5 ">
+                <p className="text-xl font-bold">थकबाकीदार</p>
+                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+                <div className="mb-4">
+                  <label className="block mb-2">नाव *</label>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded"
+                    required
+                  />
                 </div>
-                <div className="form-row-nc">
-                  <label>पत्ता *</label>
-                  <input type="text" required />
-                  <label style={{ marginLeft: "100px" }}>वय</label>
-                  <input type="number" value="0" min="0" />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block mb-2">पत्ता *</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block mb-2">वय</label>
+                    <input
+                      type="number"
+                      className="w-full p-2 border border-gray-300 rounded"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
                 </div>
-                <div className="form-row-nc">
-                  <label>जिल्हा *</label>
-                  <select
-                    name="district"
-                    value={formData.district}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select District</option>
-                    {districts.map((district) => (
-                      <option key={district.code} value={district.code}>
-                        {district.descn}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block mb-2">जिल्हा *</label>
+                    <select
+                      name="district"
+                      value={formData.district}
+                      onChange={handleChange}
+                      className="w-full p-2 border border-gray-300 rounded"
+                    >
+                      <option value="">Select District</option>
+                      {districts.map((district) => (
+                        <option key={district.code} value={district.code}>
+                          {district.descn}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block mb-2">तालुका *</label>
+                    <select
+                      name="taluka"
+                      value={formData.taluka}
+                      onChange={handleChange}
+                      className="w-full p-2 border border-gray-300 rounded"
+                      disabled={!formData.district}
+                    >
+                      <option value="" disabled>
+                        {formData.district
+                          ? "Select Taluka"
+                          : "Select a District First"}
                       </option>
-                    ))}
-                  </select>
-                  <label style={{ marginLeft: "100px" }}>तालुका *</label>
-                  <select
-                    name="taluka"
-                    value={formData.taluka}
-                    onChange={handleChange}
-                  >
-                    disabled={!formData.district}
-                    <option value="" disabled>
-                      {formData.district
-                        ? "Select Taluka"
-                        : "Select a District First"}
-                    </option>
-                    {talukas.map((taluka) => (
-                      <option key={taluka.code} value={taluka.code}>
-                        {taluka.descn}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="form-row-nc">
-                  <label>गाव *</label>
-                  <input type="text" required />
-                  <label style={{ marginLeft: "100px" }}>पिन</label>
-                  <input type="text" />
+                      {talukas.map((taluka) => (
+                        <option key={taluka.code} value={taluka.code}>
+                          {taluka.descn}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
-                <div className="form-row-nc">
-                  <label>मोबाईल नं.</label>
-                  <input type="text" />
-                  <label style={{ marginLeft: "100px" }}>ई-मेल</label>
-                  <input type="email" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block mb-2">गाव *</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block mb-2">पिन</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded"
+                    />
+                  </div>
                 </div>
 
-                <div className="form-row-nc">
-                  <label>CIN नं.</label>
-                  <input type="text" />
-                  <label style={{ marginLeft: "100px" }}>Account No</label>
-                  <input type="email" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block mb-2">मोबाईल नं.</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded"
+                    />
+                  </div>
+                  <div>
+                    <label className="block mb-2">ई-मेल</label>
+                    <input
+                      type="email"
+                      className="w-full p-2 border border-gray-300 rounded"
+                    />
+                  </div>
                 </div>
 
-                <div className="form-row-nc">
-                  <label>व्यवसाय *</label>
-                  <input type="text" required />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block mb-2">CIN नं.</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded"
+                    />
+                  </div>
+                  <div>
+                    <label className="block mb-2">Account No</label>
+                    <input
+                      type="text"
+                      className="w-full p-2 border border-gray-300 rounded"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block mb-2">व्यवसाय *</label>
+                  <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded"
+                    required
+                  />
                 </div>
               </div>
-              <hr />
-              <button type="submit" className="submit-btn-nc">
+              <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+              <button
+                type="submit"
+                className="w-full bg-blue-500 hover:bg-blue-700 text-white py-2 rounded mt-5"
+              >
                 जतन करा
               </button>
             </form>
           </div>
         )}
-        {activeTab === "jamin" ? <JaminInfo /> : null}
-        {activeTab === "karja" ? <KarjadaarInfo /> : null}
+        {activeTab === "jamin" && <JaminInfo />}
+        {activeTab === "karja" && <KarjadaarInfo />}
       </div>
     </div>
   );
