@@ -9,7 +9,7 @@ function Notice1() {
 
   return (
     <div className="print:print-container">
-      <div className="font-sans p-6 max-w-4xl mx-auto border rounded-lg bg-white shadow-md print:print-content">
+      <div className="font-sans p-6 max-w-4xl mx-auto print:print-content">
         {/* Heading */}
         <div className="flex justify-end p-4">
         <button 
