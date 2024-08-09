@@ -1,6 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function MakeReport() {
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = (url) => {
+    // If you are using external links
+    // window.location.href = url;
+
+    // If you are using internal routing with React Router
+    navigate(url);
+  };
+
   return (
     <div className="font-sans p-5 max-w-4xl mx-auto border-black">
       {/* Header Section */}
@@ -102,7 +114,7 @@ function MakeReport() {
       {/* Button Section */}
       <div className="flex flex-wrap gap-2 mt-5">
         {[
-          { text: "पहिली नोटीस", color: "bg-blue-500" },
+          { text: "पहिली नोटीस", color: "bg-blue-500", url: "/notice-1" },
           { text: "अंतीम नोटीस", color: "bg-blue-500" },
           { text: "ककाम ६४", color: "bg-blue-500" },
           { text: "एपीएफेडिट", color: "bg-blue-500" },
@@ -131,6 +143,7 @@ function MakeReport() {
         ].map((btn, index) => (
           <button
             key={index}
+            onClick={() => handleButtonClick(btn.url)}
             className={`p-2 text-white rounded cursor-pointer transition-opacity hover:opacity-80 ${btn.color}`}
           >
             {btn.text}
