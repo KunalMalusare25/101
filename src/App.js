@@ -21,6 +21,7 @@ import UploadDoc from "./pages/Case/documentupload/UploadDoc";
 import Roznama from "./pages/Case/roznama/Roznama";
 
 import Old from "./pages/old/old";
+import Notice1 from "./pages/reportview/makereport/notice/Notice1";
 
 function App() {
   return (
@@ -41,10 +42,10 @@ function App() {
           <Route path="inforeport" element={<Inforeport />} />
           <Route path="addcase" element={<Addnc />} />
           <Route path="uploadDoc" element={<UploadDoc />} />
-
           <Route path="roz" element={<Roznama />} />
-
           <Route path="old-karwai" element={<Old />} />
+
+          <Route path="notice-1" element={<Notice1 />} />
         </Route>
       </Routes>
     </HashRouter>
