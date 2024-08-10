@@ -48,26 +48,26 @@ function Notice1() {
         <div className="space-y-6 mt-1">
           <div className="justify-between">
             <p>
-              थकबाकीदार श्री./सौ. <input type="text" className="w-96 border mb-1" />
+              थकबाकीदार श्री./सौ. <input type="text" className="w-96 border-b mb-1" />
             </p>
             <p className="ml-24 print:ml-16">
-              मु.पो. <input type="text" className="w-96 border" />
+              मु.पो. <input type="text" className="w-96 border-b" />
             </p>
           </div>
           <div className="justify-between">
             <p >
-              जामीनदार १) श्री./सौ. <input type="text" className=" border-b w-96 border mb-1" />
+              जामीनदार १) श्री./सौ. <input type="text" className=" border-b w-96  mb-1" />
             </p>
             <p className="ml-24 print:ml-16">
-              मु.पो. <input type="text" className="w-96 border " />
+              मु.पो. <input type="text" className="w-96 border-b " />
             </p>
           </div>
           <div className="justify-between">
             <p >
-            जामीनदार २) श्री./सौ. <input type="text" className=" border-b w-96 border mb-1" />
+            जामीनदार २) श्री./सौ. <input type="text" className=" border-b w-96 mb-1" />
             </p>
             <p className="ml-24 print:ml-16">
-              मु.पो. <input type="text" className="w-96 border" />
+              मु.पो. <input type="text" className="w-96 border-b" />
             </p>
           </div>
 
