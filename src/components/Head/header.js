@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="h-20 px-6 flex items-center justify-between relative bg-orange-300">
+      <header className="h-20 px-6 flex items-center justify-between relative bg-purple-950">
         {/* Desktop Menu */}
         <nav className="hidden lg:flex lg:items-center lg:space-x-32 lg:ml-16 lg:text-white lg:text-lg flex-1">
           <ul className="flex items-center space-x-8 cursor-pointer">

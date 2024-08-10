@@ -42,7 +42,9 @@ function Dashboard() {
       </div>
       <div className="Das-DashContain">
         <div className="Das-card-left">
-          <h2 className="Das-card-title">CASE SUMMARY</h2>
+          <h2 className="Das-card-title">
+            <u>CASE SUMMARY</u>
+          </h2>
           <div className="Das-date-time">
             <h5>{formatDate(currentTime)}</h5>
           </div>
@@ -63,7 +65,9 @@ function Dashboard() {
           </div>
         </div>
         <div className="Das-card-right ">
-          <h2 className="Das-card-title">STAMP CALCULATION</h2>
+          <h2 className="Das-card-title">
+            <u>STAMP CALCULATION</u>
+          </h2>
           <button
             className="Das-button"
             onClick={() => handleButtonClick("केस नं. १ (पहा)")}
