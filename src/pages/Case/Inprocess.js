@@ -80,7 +80,7 @@ function Inprocess() {
 
   return (
     <div className="flex items-center justify-center mt-8 md:mt-10 lg:mt-12 px-4 md:px-6">
-      <div className="bg-white rounded-lg shadow-lg p-5 md:p-8 w-full max-w-4xl lg:max-w-6xl">
+      <div className="bg-white rounded-lg shadow-lg p-5 md:p-8 w-full max-w-4xl lg:max-w-7xl">
         <p className="mt-2 text-orange-500 p-3 font-semibold text-center">
           <span className="block mb-3">प्रगतीपथावर केस यादी</span>
           <hr />
@@ -92,6 +92,14 @@ function Inprocess() {
           >
             नवीन केस भरा / ADD New Case +
           </button>
+        </div>
+        <div className="flex items-center">
+          <p className="mr-3 text-gray-700">Search:</p>
+          <input
+            type="search"
+            className="p-1 border border-gray-300 rounded-md w-36 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            placeholder="Search..."
+          />
         </div>
         {/* Table for larger screens */}
         <div className="hidden md:block overflow-x-auto">
@@ -151,12 +159,16 @@ function Inprocess() {
                         प्रक्रिया
                       </button>
                       <ul
-                        className={`absolute right-0 bg-white border border-gray-300 rounded-md shadow-md mt-1 transition-transform duration-200 transform ${
+                        className={`absolute right-0 bg-white border border-gray-300 rounded-md shadow-md mt-1 transition-transform duration-200 transform  ${
                           openDropdownIndex === index
                             ? "scale-100 opacity-100 z-50"
                             : "scale-90 opacity-0 pointer-events-none"
                         }`}
-                        style={{ top: "100%", left: "0" }}
+                        style={{
+                          top: "100%",
+                          backgroundColor: "grey",
+                          width: "200px",
+                        }}
                       >
                         <li
                           onClick={() => handleNavigate("/addcase")}
@@ -236,7 +248,7 @@ function Inprocess() {
                       ? "scale-100 opacity-100 z-50 "
                       : "scale-90 opacity-0 pointer-events-none"
                   }`}
-                  style={{ top: "100%", left: "0" }}
+                  style={{ top: "100%" }}
                 >
                   <li
                     onClick={() => handleNavigate("/addcase")}

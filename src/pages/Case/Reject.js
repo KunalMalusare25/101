@@ -1,11 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Reject() {
-  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
-  const dropdownRefs = useRef([]);
-  const navigate = useNavigate();
-
   const tableData = [
     {
       caseNo: 1,
@@ -13,6 +9,7 @@ function Reject() {
       name: "kunal",
       address: "pune",
       mobile: "8888474692",
+      ArName: "TestAR हवेली",
       status: "reject",
     },
     {
@@ -21,6 +18,7 @@ function Reject() {
       name: "raj",
       address: "mumbai",
       mobile: "9999999999",
+      ArName: "TestAR हवेली",
       status: "reject",
     },
     {
@@ -29,24 +27,27 @@ function Reject() {
       name: "sita",
       address: "pune",
       mobile: "7777777777",
+      ArName: "TestAR हवेली",
       status: "reject",
     },
   ];
+
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
+
+  const navigate = useNavigate();
 
   const toggleDropdown = (index) => {
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
 
   const handleNavigate = (path) => {
-    navigate(path);
     setOpenDropdownIndex(null); // Close dropdown after navigation
+    navigate(path);
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRefs.current.every((ref) => ref && !ref.contains(event.target))
-      ) {
+      if (!event.target.closest(".reject-dropdown-container")) {
         setOpenDropdownIndex(null);
       }
     };
@@ -57,102 +58,113 @@ function Reject() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center mt-8 px-4 md:px-6">
-      <div className="bg-white rounded-lg shadow-lg p-5 w-full max-w-4xl md:max-w-6xl">
-        <p className="text-orange-500 p-3 font-semibold text-center">
-          <span className="block mb-3">नापसंत केस यादी</span>
+    <div className="flex items-center justify-center mt-8 px-4">
+      <div className="bg-white rounded-lg shadow-lg p-5 md:p-8 w-full max-w-4xl lg:max-w-7xl">
+        <p className="text-orange-500 text-center font-semibold mb-4">
+          <span className="block mb-2">Reject केस यादी</span>
           <hr />
         </p>
+        <div className="flex items-center mb-2">
+          <p className="mr-3 text-gray-700">Search:</p>
+          <input
+            type="search"
+            className="p-1 border border-gray-300 rounded-md w-36 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            placeholder="Search..."
+          />
+        </div>
+
         {/* Table for larger screens */}
         <div className="hidden md:block overflow-x-auto">
-          <table className="min-w-full border-collapse border border-gray-300">
-            <thead>
-              <tr className="bg-gray-200">
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  केस नं.
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Case Number
                 </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  शाखा
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Branch
                 </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  नाव
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Name
                 </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  पत्ता (जिल्हा, तालुका, गाव)
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Address
                 </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  मोबाईल नं
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Mobile
                 </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  स्थिती
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  AR Name
                 </th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-medium">
-                  Process
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Status
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  प्रक्रिया
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white divide-y divide-gray-200">
               {tableData.map((data, index) => (
-                <tr
-                  key={data.caseNo}
-                  className="hover:bg-gray-100 even:bg-gray-50"
-                >
-                  <td className="border border-gray-300 px-4 py-2">
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {data.caseNo}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {data.branch}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {data.name}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {data.address}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {data.mobile}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {data.ArName}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {data.status}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    <div className="relative">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <div className="relative reject-dropdown-container">
                       <button
-                        className="text-white bg-orange-500 hover:bg-orange-600 transition duration-200 px-4 py-2 rounded-md"
                         onClick={() => toggleDropdown(index)}
+                        className="bg-blue-500 text-white py-2 px-4 rounded-lg"
                       >
-                        Process
+                        प्रक्रिया
                       </button>
                       {openDropdownIndex === index && (
-                        <ul
-                          className="absolute bg-white border border-gray-300 rounded-md shadow-md mt-1 w-48 z-50"
-                          ref={(el) => (dropdownRefs.current[index] = el)}
-                        >
-                          <li
-                            onClick={() => handleNavigate("/addcase")}
-                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          >
-                            See
-                          </li>
-                          <li
-                            onClick={() => handleNavigate("/addcase")}
-                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          >
-                            Improve
-                          </li>
-                          <li
-                            onClick={() => handleNavigate("/rejectreason")}
-                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          >
-                            Case Reject Reason
-                          </li>
-                          <li
-                            onClick={() => handleNavigate("/tranferar")}
-                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          >
-                            Transfer to AR
-                          </li>
-                        </ul>
+                        <div className="absolute right-0 bg-white border rounded shadow-lg mt-2 w-48 z-50">
+                          <ul className="text-sm text-gray-700">
+                            <li
+                              onClick={() => handleNavigate("/addcase")}
+                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                              पाहा
+                            </li>
+                            <li
+                              onClick={() => handleNavigate("/addcase")}
+                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                              सुधारणे
+                            </li>
+                            <li
+                              onClick={() => handleNavigate("/rejectreason")}
+                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                              केस Reject Reason
+                            </li>
+                            <li
+                              onClick={() => handleNavigate("/tranferar")}
+                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                            >
+                              A R ला हस्तांतरित करा
+                            </li>
+                          </ul>
+                        </div>
                       )}
                     </div>
                   </td>
@@ -194,7 +206,7 @@ function Reject() {
               <p className="text-gray-700 mb-1">
                 <strong>मोबाईल नं:</strong> {data.mobile}
               </p>
-              <div className="relative mt-2">
+              <div className="relative reject-dropdown-container mt-2">
                 <button
                   className="text-white bg-orange-500 hover:bg-orange-600 transition duration-200 px-3 py-1 rounded-md w-full text-center"
                   onClick={() => toggleDropdown(index)}
