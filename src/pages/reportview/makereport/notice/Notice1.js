@@ -9,7 +9,7 @@ function Notice1() {
 
   return (
     <div className="print:print-container">
-      <div className="font-sans p-6 max-w-4xl mx-auto border rounded-lg bg-white shadow-md print:print-content">
+      <div className="font-sans p-6 max-w-4xl mx-auto print:print-content">
         {/* Heading */}
         <div className="flex justify-end p-4">
         <button 
@@ -21,61 +21,63 @@ function Notice1() {
         </button>
         </div>
         <div className="text-center font-bold text-lg mb-4">
-          <p>समक्ष बजावणीने / डकवणी कार्यवाहीने/यु.पी.सी/</p>
+          <p>समक्ष बजावणीने / डकवणी कार्यवाहीने/ यु.पी.सी /</p>
         </div>
-        <div className="flex">
-          <div>
+        <div className="flex justify-between">
+          <div className=" items-center space-x-4">
             <p>(कर्जदारास द्यावयाचे नोटीसीचा नमुना)</p>
-            <p>नमुना नं.अ</p>
+            <p >नमुना नं.अ</p>
           </div>
-          <div className="justify-end ml-72">
-            <p className="max-w-xs">
+          <div className="text-right max-w-xs">
+            <p className="print:w-58 ml-24 text-left">
               महाराष्ट्र सहकारी सं. अधिनियम १९६० अन्वये सक्तीच्या मार्गाने कलम १०१
               ची प्रक्रिया सुरु होण्यापुर्वीची नोटीस
             </p>
-            <p>
-              जा.क्र. <input type="text" className="w-42" />
+            <div className="flex mt-1 space-x-2 print:ml-24">
+            <p >
+              जा.क्र. <input type="text" className="w-20 mr-1" />
             </p>
             <p>
-              दि <input type="date" className="w-42" />
+              दि. <input type="date" className="w-32 print:w-20" />
             </p>
+            </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="space-y-4">
+        <div className="space-y-6 mt-1">
           <div className="justify-between">
             <p>
-              थकबाकीदारे श्री./सौ. <input type="text" className="w-42 border-b" />
+              थकबाकीदार श्री./सौ. <input type="text" className="w-96 border-b mb-1" />
             </p>
-            <p>
-              मु.पो. <input type="text" className="w-42 border-b" />
+            <p className="ml-24 print:ml-16">
+              मु.पो. <input type="text" className="w-96 border-b" />
             </p>
           </div>
           <div className="justify-between">
-            <p>
-              जामीनदार १) श्री./सौ. <input type="text" className="w-42 border-b" />
+            <p >
+              जामीनदार १) श्री./सौ. <input type="text" className=" border-b w-96  mb-1" />
             </p>
-            <p>
-              मु.पो. <input type="text" className="w-42 border-b" />
+            <p className="ml-24 print:ml-16">
+              मु.पो. <input type="text" className="w-96 border-b " />
             </p>
           </div>
           <div className="justify-between">
-            <p>
-              जामीनदार २) <input type="text" className="w-42 border-b" />
+            <p >
+            जामीनदार २) श्री./सौ. <input type="text" className=" border-b w-96 mb-1" />
             </p>
-            <p>
-              मु.पो. <input type="text" className="w-42 border-b" />
+            <p className="ml-24 print:ml-16">
+              मु.पो. <input type="text" className="w-96 border-b" />
             </p>
           </div>
 
-          <div className="font-bold text-lg mb-4">
+          <div className=" text-lg mb-4">
             विषय:- कायद्याच्या मार्गाने थकबाकी कर्ज वसुलीबाबत...
           </div>
 
           <p className="text-justify">
             <span className="ml-10">कळविण्यात येते की</span>
-            <input type="text" className="w-42 border-b" /> संस्थेकडून कर्ज घेतले असून
+            <input type="text" className="ml-1 w-96 border-b" /> संस्थेकडून कर्ज घेतले असून
             त्याची मुदत संपलेली आहे. तसेच तुम्हाला या अगोदर देखील नोटीस देऊन तगादे करून
             प्रत्यक्ष भेटी घेऊन देखील तुम्ही थकबाकी रक्कम भरलेली नाही. आपण जाणून बुजून
             संस्थेस नाईलाजास्तव पुढील कारवाई करण्यास भाग पाडत आहात. तरी तुम्हाला
@@ -96,7 +98,7 @@ function Notice1() {
             कारवाईत मा. विशेष वसुली व विक्री अधिकारी यांच्याकडे वसुली सुपूर्त
             केल्यानंतरच खर्चिक व मानसिकरित्या आपणांस ही बाब त्रासदायक होऊ शकते.
             <br />
-            जामीनदार यांना कळविण्यात येते की, कारवाई झाल्यावर जामीनदार हे कर्जदार
+            <span className="ml-10">जामीनदार</span> यांना कळविण्यात येते की, कारवाई झाल्यावर जामीनदार हे कर्जदार
             एवढेच जबाबदार असल्याने Indian Contract Act. 1872 प्रमाणे व कमल १२८ प्रमाणे
             कर्जदाराएवढेच जबाबदार समजले जातात. तसेच या प्रक्रियेत संस्थेचा खर्च १.७५% /
             ५% शासकिय सरचार्ज नियमाप्रमाणे वसुल केला जातो व पोलीस यंत्रणेचा खर्च मा.
@@ -110,21 +112,21 @@ function Notice1() {
             संस्थेत आणून भरुन खाते नील (बेबाक) करुन संस्थेस सहकार्य करावे ही विनंती.
             अन्यथा कायदेशीर जाती कारवाई करुन तसेच दैनिक वर्तमानपत्रात प्रसिध्दी देवून
             जाहीर लिलावाद्वारे थकबाकी वसुल केली जाईल व खर्च आपले नावावर टाकला जाईल.
-          </p>
-          <div>
-            <p>
-              विशेष टीप- मा. विशेष वसुली व विक्री अधिकारी यांचे समन्स नोटीस घेण्यास
+            </p>
+          <span className="block text-justify">
+            <u>विशेष टीप</u>- मा. विशेष वसुली व विक्री अधिकारी यांचे समन्स नोटीस घेण्यास
               टाळाटाळ करणे त्यांस प्रतिबंध करणे, आवेश नाकारणे, वसुलीकामी अडथळे निर्माण
               करणे इ. बेकायदेशीर कृत्य आपणांकडून घडल्यास कायद्यानुसार आपणावर दंडात्मक
               कारवाई होऊन कैदेच्या शिक्षेची तरतूद आहे. याची थकबाकीदारांनी व त्यांच्या
               जामीनदारांनी विशेष नोंद घ्यावी.
-            </p>
+            </span>
             <br />
-          </div>
+
           <div className="flex justify-end w-full">
             <div className="text-right">
               <p>व्यवस्थापक / विशेष वसुली अधिकारी</p>
-              <input type="text" className="w-42 border-b" />
+              <br />
+              <input type="text" className="w-60 border-b" />
             </div>
           </div>
         </div>

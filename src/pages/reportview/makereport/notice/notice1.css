@@ -1,24 +1,34 @@
 @media print {
-  .print-container {
-    margin: 20mm; /* Add margin for A4 paper */
+    
+    @page {
+      margin: 45mm 10mm 6mm 10mm; /* Set margins for the printed page */
+    }
+  
+    .print-container {
+      width: 100%; /* Ensure container width fits the page */
+      max-width: 100%; /* Ensure container width does not exceed page width */
+      box-sizing: border-box; /* Include padding and border in element's total width and height */
+      padding: 10mm;
+    }
+  
+    .print-button {
+      display: none; /* Hide the print button in print view */
+    }
+  
+    .font-sans {
+      font-size: 8pt; /* Adjust font size for print */
+    }
+  
+    /* Ensure inputs and other elements fit within the print area */
+    input {
+      width: auto; /* Adjust width for printing */
+    }
+  
+    .max-w-4xl {
+      max-width: 100%; /* Ensure the container width fits the page */
+    }
+  
+    
   }
-
-  .print-button {
-    display: none; /* Hide the print button in print view */
-  }
-
-  .font-sans {
-    font-size: 9.5pt; /* Adjust font size for print */
-  }
-
-  /* Ensure inputs and other elements fit within the print area */
-  input {
-    width: auto; /* Adjust width for printing */
-  }
-
-  .max-w-4xl {
-    max-width: 100%; /* Ensure the container width fits the page */
-  }
-
-  /* Add any other print-specific styles here */
-}
+  
+  
