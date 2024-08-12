@@ -6,10 +6,6 @@ function Firstnotice() {
   };
 
   return (
-
-    <div>Firstnotice</div>
-  )
-
     <div className="mt-5 p-8 max-w-7xl mx-auto bg-white print:text-xs print:mt-0 print:p-4">
       {/* Header Section */}
       <div className="flex justify-end p-4 print:p-0">
@@ -156,7 +152,6 @@ function Firstnotice() {
       </div>
     </div>
   );
->>>>>>> f2e13a26c421539f4762cf08efea42d8b39fd8bf
 }
 
 export default Firstnotice;
