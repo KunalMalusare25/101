@@ -23,6 +23,7 @@ import Roznama from "./pages/Case/roznama/Roznama";
 import Old from "./pages/old/old";
 import Notice1 from "./pages/reportview/makereport/notice/Notice1";
 import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
+import Firstnotice from "./pages/reportview/makereport/notice/Firstnotice";
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
           <Route path="uploadDoc" element={<UploadDoc />} />
           <Route path="roz" element={<Roznama />} />
           <Route path="old-karwai" element={<Old />} />
+
+        {/* # NOTICES */}
+        <Route path="FirstNotice" element={<Firstnotice />} />
 
           <Route path="notice-1" element={<Notice1 />} />
 
