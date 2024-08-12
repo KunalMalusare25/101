@@ -151,9 +151,9 @@ function MakeReport() {
           { text: "एक रुपया ठवक विशंती पत्र", color: "bg-green-500" },
           { text: "दोन रुपया ठवक विशंती पत्र", color: "bg-green-500" },
           { text: "तीन रुपया ठवक विशंती पत्र", color: "bg-green-500" },
-          { text: "N1", color: "bg-green-500", url: "/notice-1" },
-          { text: "N2", color: "bg-green-500" },
-          { text: "N3", color: "bg-green-500" },
+          { text: "N1", color: "bg-yellow-200", url: "/notice-1" },
+          { text: "N2", color: "bg-yellow-200" },
+          { text: "N3", color: "bg-yellow-200" },
         ].map((btn, index) => (
           <button
             key={index}
