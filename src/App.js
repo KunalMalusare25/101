@@ -22,6 +22,7 @@ import Roznama from "./pages/Case/roznama/Roznama";
 
 import Old from "./pages/old/old";
 import Notice1 from "./pages/reportview/makereport/notice/Notice1";
+import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
           <Route path="old-karwai" element={<Old />} />
 
           <Route path="notice-1" element={<Notice1 />} />
+
+          {/* FEDRATION */}
+          <Route path="fedardash" element={<Fedarationdash />} />
         </Route>
       </Routes>
     </HashRouter>

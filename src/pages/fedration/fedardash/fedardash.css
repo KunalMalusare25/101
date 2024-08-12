@@ -1,0 +1,16 @@
+.fedar-Das-dash-statistics {
+  width: 100%;
+  padding: 20px;
+  background-color: #bcb9b8;
+  color: white;
+  text-align: center;
+}
+
+.fedar-Das-dash-statistics h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.fedar-Das-dash-statistics p {
+  font-size: 1.2rem;
+}

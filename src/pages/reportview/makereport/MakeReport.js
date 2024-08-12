@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function MakeReport() {
-
   const navigate = useNavigate();
 
   const handleButtonClick = (url) => {
@@ -38,6 +37,18 @@ function MakeReport() {
             {
               id: "option6",
               text: "सहाय्यक निबंधक (परसेवा), अहमदनगर जिल्हा पतसंस्थांचे सहकारी फेडरेशन मर्या. अहमदनगर",
+            },
+            {
+              id: "option7",
+              text: "N1",
+            },
+            {
+              id: "option7",
+              text: "N2",
+            },
+            {
+              id: "option7",
+              text: "N3",
             },
           ].map((option) => (
             <div key={option.id} className="flex items-center space-x-2">
@@ -114,7 +125,7 @@ function MakeReport() {
       {/* Button Section */}
       <div className="flex flex-wrap gap-2 mt-5">
         {[
-          { text: "पहिली नोटीस", color: "bg-blue-500", url: "/notice-1" },
+          { text: "पहिली नोटीस", color: "bg-blue-500" },
           { text: "अंतीम नोटीस", color: "bg-blue-500" },
           { text: "ककाम ६४", color: "bg-blue-500" },
           { text: "एपीएफेडिट", color: "bg-blue-500" },
@@ -140,6 +151,9 @@ function MakeReport() {
           { text: "एक रुपया ठवक विशंती पत्र", color: "bg-green-500" },
           { text: "दोन रुपया ठवक विशंती पत्र", color: "bg-green-500" },
           { text: "तीन रुपया ठवक विशंती पत्र", color: "bg-green-500" },
+          { text: "N1", color: "bg-green-500", url: "/notice-1" },
+          { text: "N2", color: "bg-green-500" },
+          { text: "N3", color: "bg-green-500" },
         ].map((btn, index) => (
           <button
             key={index}
