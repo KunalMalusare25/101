@@ -113,8 +113,13 @@ function MakeReport() {
       {/* Button Section */}
       <div className="flex flex-wrap gap-2 mt-5">
         {[
+
           { text: "पहिली नोटीस", color: "bg-blue-500", url: "/FirstNotice" },
           { text: "अंतीम नोटीस", color: "bg-blue-500" },
+
+          { text: "पहिली नोटीस", color: "bg-blue-500" },
+          { text: "अंतीम नोटीस", color: "bg-blue-500", url: "/Antim-notice" },
+
           { text: "ककाम ६४", color: "bg-blue-500" },
           { text: "एपीएफेडिट", color: "bg-blue-500" },
           { text: "चालन", color: "bg-orange-500" },
