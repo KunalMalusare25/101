@@ -96,7 +96,7 @@ const Login = () => {
             Login
           </button>
           <div className="flex items-center justify-between mt-4">
-            <div className="w-1/2 sm:w-1/2" >
+            <div className="w-1/2 sm:w-1/2">
               <input type="checkbox" className="mr-2" />
               <label>Remember</label>
             </div>
