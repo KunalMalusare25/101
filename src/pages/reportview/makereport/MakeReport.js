@@ -38,18 +38,6 @@ function MakeReport() {
               id: "option6",
               text: "सहाय्यक निबंधक (परसेवा), अहमदनगर जिल्हा पतसंस्थांचे सहकारी फेडरेशन मर्या. अहमदनगर",
             },
-            {
-              id: "option7",
-              text: "N1",
-            },
-            {
-              id: "option7",
-              text: "N2",
-            },
-            {
-              id: "option7",
-              text: "N3",
-            },
           ].map((option) => (
             <div key={option.id} className="flex items-center space-x-2">
               <input
