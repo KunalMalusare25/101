@@ -115,9 +115,6 @@ function MakeReport() {
         {[
 
           { text: "पहिली नोटीस", color: "bg-blue-500", url: "/FirstNotice" },
-          { text: "अंतीम नोटीस", color: "bg-blue-500" },
-
-          { text: "पहिली नोटीस", color: "bg-blue-500" },
           { text: "अंतीम नोटीस", color: "bg-blue-500", url: "/Antim-notice" },
 
           { text: "ककाम ६४", color: "bg-blue-500" },
@@ -139,11 +136,11 @@ function MakeReport() {
           { text: "101 सेट - रोजनामा एक्स पार्टी", color: "bg-blue-500" },
           { text: "101 सेट - जबाब", color: "bg-blue-500" },
           { text: "101 सेट - ठराव", color: "bg-blue-500" },
-          { text: "मागणी नोटीस (प्रकर 1)", color: "bg-red-500" },
-          { text: "मागणी नोटीस (प्रकर 2)", color: "bg-red-500" },
-          { text: "एक रुपया ठवक विशंती पत्र", color: "bg-green-500" },
-          { text: "दोन रुपया ठवक विशंती पत्र", color: "bg-green-500" },
-          { text: "तीन रुपया ठवक विशंती पत्र", color: "bg-green-500" },
+          { text: "मागणी नोटीस (प्रकर 1)", color: "bg-red-500", url: "/Magni-Notice-Prakar1" },
+          { text: "मागणी नोटीस (प्रकर 2)", color: "bg-red-500", url: "/Magni-Notice-Prakar2" },
+          { text: "एक हप्ता थकीत विनंती पत्र ", color: "bg-green-500", url: "/First-Hafta" },
+          { text: "दोन हप्ते थकीत सूचना पत्र ", color: "bg-green-500", url:"/Second-Hafta" },
+          { text: "तीन हप्ते थकीत सूचना पत्र", color: "bg-green-500", url:"/Third-Hafta" },
           { text: "N1", color: "bg-yellow-200", url: "/notice-1" },
           { text: "N2", color: "bg-yellow-200" },
           { text: "N3", color: "bg-yellow-200" },
