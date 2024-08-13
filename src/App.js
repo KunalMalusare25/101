@@ -27,8 +27,15 @@ import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
 import Firstnotice from "./pages/reportview/makereport/notice/Firstnotice";
 
 import Antimnotice from "./pages/reportview/makereport/notice/Antimnotice";
+
+import TrdHafta from "./pages/reportview/makereport/notice/3rd_hafta";
+import SndHafta from "./pages/reportview/makereport/notice/2nd_hafta";
+import FirstHafta from "./pages/reportview/makereport/notice/1st_hafta";
+import Prakar1 from "./pages/reportview/makereport/notice/Prakar1";
+import Prakar2 from "./pages/reportview/makereport/notice/Prakar2";
 import Kalamnotice from "./pages/reportview/makereport/notice/Kalamnotice";
 import Affidavit from "./pages/reportview/makereport/notice/Affidavit";
+
 
 function App() {
   return (
@@ -54,7 +61,21 @@ function App() {
           {/* # NOTICES */}
           <Route path="FirstNotice" element={<Firstnotice />} />
 
+
+
+        {/* # NOTICES */}
+        <Route path="FirstNotice" element={<Firstnotice />} />
+        <Route path="Third-Hafta" element={<TrdHafta/>}/>
+        <Route path="Second-Hafta" element={<SndHafta/>} />
+        <Route path="First-Hafta" element={<FirstHafta />} />
+        <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
+        <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
+
+          {/* notice-section */}
+
+
           <Route path="kalam" element={<Kalamnotice />} />
+
           <Route path="Antim-notice" element={<Antimnotice />} />
           <Route path="affidavit" element={<Affidavit />} />
           <Route path="notice-1" element={<Notice1 />} />

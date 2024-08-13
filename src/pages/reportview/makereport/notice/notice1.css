@@ -1,5 +1,8 @@
 @media print {
     
+  .print-touch-top {
+    margin-top: -50px; /* Adjust the value if needed to touch the top margin */
+}
     @page {
       margin: 45mm 10mm 6mm 10mm; /* Set margins for the printed page */
     }
