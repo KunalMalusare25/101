@@ -125,7 +125,7 @@ const Tharav = () => {
                 <th className="border border-gray-300 p-2"></th>
               </tr>
             </thead>
-            <tbody>x
+            <tbody>
               <tr>
                 <td className="border border-gray-300 p-2"></td>
                 <td className="border border-gray-300 p-2">
