@@ -61,8 +61,6 @@ function App() {
           <Route path="uploadDoc" element={<UploadDoc />} />
           <Route path="roz" element={<Roznama />} />
           <Route path="old-karwai" element={<Old />} />
-          {/* # NOTICES */}
-          <Route path="FirstNotice" element={<Firstnotice />} />
 
           {/* # NOTICES */}
           <Route path="FirstNotice" element={<Firstnotice />} />
