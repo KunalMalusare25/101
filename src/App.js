@@ -44,6 +44,7 @@ import Jawab from "./pages/reportview/makereport/notice/jawab";
 import RojnamaX from "./pages/reportview/makereport/notice/rojx";
 import RoznamaNot from "./pages/reportview/makereport/notice/roznama";
 import NamunaV from "./pages/reportview/makereport/notice/namunaV";
+import NamunaU from "./pages/reportview/makereport/notice/NamunaU";
 
 function App() {
   return (
