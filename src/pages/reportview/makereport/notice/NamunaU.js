@@ -226,13 +226,6 @@ function NamunaU() {
         </table>
       </div>
 
-      <div className="text-right mt-4 text-sm print:text-sm print:mt-56 ">
-        <p>पान क्र. 1</p>
-      </div>
-
-      <br />
-      <hr className="border border-b-gray-950" />
-
       {/* page-2 */}
       <div className=" break-before border border-gray-300 mt-10 ">
         <div className="flex justify-between border-b border-gray-300 p-2 bg-gray-100">
@@ -385,11 +378,6 @@ function NamunaU() {
           </tbody>
         </table>
       </div>
-
-      <div className="text-right  text-sm  mt-4 print:mt-80 ">
-        <p>पान क्र. 2</p>
-      </div>
-      <hr className="border border-b-gray-950" />
 
       {/* page-3  section -A table 1*/}
       <div className=" mt-10 break-before border border-gray-300 text-xs  print:text-xs">
@@ -739,10 +727,7 @@ function NamunaU() {
           </span>
         </div>
       </div>
-      <div className="text-right  text-sm  mt-4 ">
-        <p>पान क्र. 3</p>
-      </div>
-      <hr className="border border-b-gray-950" />
+
       {/* page-4 */}
       {/* table-Notice Section */}
       <div className="break-before mt-10 print:mt-2 print:text-xs">
@@ -917,10 +902,6 @@ function NamunaU() {
           </tbody>
         </table>
       </div>
-      <div className="text-right  text-sm  mt-4 print:mt-20">
-        <p>पान क्र. 4</p>
-      </div>
-      <hr className="border border-b-gray-950" />
     </div>
   );
 }
