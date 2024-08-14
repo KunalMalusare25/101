@@ -35,6 +35,8 @@ import Prakar1 from "./pages/reportview/makereport/notice/Prakar1";
 import Prakar2 from "./pages/reportview/makereport/notice/Prakar2";
 import Kalamnotice from "./pages/reportview/makereport/notice/Kalamnotice";
 import Affidavit from "./pages/reportview/makereport/notice/Affidavit";
+import Tharav from "./pages/reportview/makereport/notice/tharav";
+import Jawab from "./pages/reportview/makereport/notice/jawab";
 
 
 function App() {
@@ -58,10 +60,7 @@ function App() {
           <Route path="uploadDoc" element={<UploadDoc />} />
           <Route path="roz" element={<Roznama />} />
           <Route path="old-karwai" element={<Old />} />
-          {/* # NOTICES */}
-          <Route path="FirstNotice" element={<Firstnotice />} />
-
-
+      
 
         {/* # NOTICES */}
         <Route path="FirstNotice" element={<Firstnotice />} />
@@ -70,6 +69,8 @@ function App() {
         <Route path="First-Hafta" element={<FirstHafta />} />
         <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
         <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
+        <Route path="Tharav" element={<Tharav />} />
+        <Route path="Jawab" element={<Jawab />} />
 
           {/* notice-section */}
 
