@@ -39,6 +39,11 @@ import Challanpage from "./pages/reportview/makereport/notice/Challanpage";
 import Dakhalallnotice from "./pages/reportview/makereport/notice/Dakhalallnotice";
 import Labelprint from "./pages/reportview/makereport/notice/Labelprint";
 import RegisterPavti from "./pages/reportview/makereport/notice/RegisterPavti";
+import Tharav from "./pages/reportview/makereport/notice/tharav";
+import Jawab from "./pages/reportview/makereport/notice/jawab";
+import RojnamaX from "./pages/reportview/makereport/notice/rojx";
+import RoznamaNot from "./pages/reportview/makereport/notice/roznama";
+import NamunaV from "./pages/reportview/makereport/notice/namunaV";
 
 function App() {
   return (
@@ -61,8 +66,6 @@ function App() {
           <Route path="uploadDoc" element={<UploadDoc />} />
           <Route path="roz" element={<Roznama />} />
           <Route path="old-karwai" element={<Old />} />
-          {/* # NOTICES */}
-          <Route path="FirstNotice" element={<Firstnotice />} />
 
           {/* # NOTICES */}
           <Route path="FirstNotice" element={<Firstnotice />} />
@@ -71,6 +74,11 @@ function App() {
           <Route path="First-Hafta" element={<FirstHafta />} />
           <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
           <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
+          <Route path="Tharav" element={<Tharav/>} />
+          <Route path="Jawab" element={<Jawab />} />
+          <Route path="RojnamaX" element={<RojnamaX />} />
+          <Route path="Roznama" element={<RoznamaNot />} />
+          <Route path="Namuna_V" element={<NamunaV />} />
 
           {/* notice-section */}
 
