@@ -35,9 +35,10 @@ import Prakar1 from "./pages/reportview/makereport/notice/Prakar1";
 import Prakar2 from "./pages/reportview/makereport/notice/Prakar2";
 import Kalamnotice from "./pages/reportview/makereport/notice/Kalamnotice";
 import Affidavit from "./pages/reportview/makereport/notice/Affidavit";
-import Tharav from "./pages/reportview/makereport/notice/tharav";
-import Jawab from "./pages/reportview/makereport/notice/jawab";
-
+import Challanpage from "./pages/reportview/makereport/notice/Challanpage";
+import Dakhalallnotice from "./pages/reportview/makereport/notice/Dakhalallnotice";
+import Labelprint from "./pages/reportview/makereport/notice/Labelprint";
+import RegisterPavti from "./pages/reportview/makereport/notice/RegisterPavti";
 
 function App() {
   return (
@@ -60,25 +61,26 @@ function App() {
           <Route path="uploadDoc" element={<UploadDoc />} />
           <Route path="roz" element={<Roznama />} />
           <Route path="old-karwai" element={<Old />} />
-      
+          {/* # NOTICES */}
+          <Route path="FirstNotice" element={<Firstnotice />} />
 
-        {/* # NOTICES */}
-        <Route path="FirstNotice" element={<Firstnotice />} />
-        <Route path="Third-Hafta" element={<TrdHafta/>}/>
-        <Route path="Second-Hafta" element={<SndHafta/>} />
-        <Route path="First-Hafta" element={<FirstHafta />} />
-        <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
-        <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
-        <Route path="Tharav" element={<Tharav />} />
-        <Route path="Jawab" element={<Jawab />} />
+          {/* # NOTICES */}
+          <Route path="FirstNotice" element={<Firstnotice />} />
+          <Route path="Third-Hafta" element={<TrdHafta />} />
+          <Route path="Second-Hafta" element={<SndHafta />} />
+          <Route path="First-Hafta" element={<FirstHafta />} />
+          <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
+          <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
 
           {/* notice-section */}
 
-
           <Route path="kalam" element={<Kalamnotice />} />
-
+          <Route path="challan" element={<Challanpage />} />
           <Route path="Antim-notice" element={<Antimnotice />} />
           <Route path="affidavit" element={<Affidavit />} />
+          <Route path="dakhal" element={<Dakhalallnotice />} />
+          <Route path="labelprint" element={<Labelprint />} />
+          <Route path="registerpavti" element={<RegisterPavti />} />
           <Route path="notice-1" element={<Notice1 />} />
           {/* FEDRATION */}
           <Route path="fedardash" element={<Fedarationdash />} />

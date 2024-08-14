@@ -6,7 +6,7 @@ function Firstnotice() {
   };
 
   return (
-    <div className="mt-5 p-8 max-w-7xl mx-auto bg-white print:text-xs print:mt-0 print:p-4">
+    <div className="mt-5 p-8 max-w-7xl mx-auto border border-black bg-white print:text-xs print:mt-0 print:p-4">
       {/* Header Section */}
       <div className="flex justify-end p-4 print:p-0">
         <button
