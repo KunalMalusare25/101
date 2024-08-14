@@ -6,7 +6,7 @@ function Kalamnotice() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6 bg-white  mt-5 print:mt-0 print:p-4">
+    <div className="max-w-7xl mx-auto p-6 border border-black bg-white  mt-5 print:mt-0 print:p-4">
       {/* Header Section */}
       <div className="flex justify-end p-4 print:p-0">
         <button
@@ -17,10 +17,10 @@ function Kalamnotice() {
         </button>
       </div>
       <div className="text-center mb-4 print:mb-2">
-        <h1 className="text-2xl font-bold print:text-xl">
+        <h1 className="text-2xl font-bold print:text-xl ">
           स्वामी विवेकानंद नागरी सहकारी पतसंस्था मर्यादित
         </h1>
-        <p className="text-sm print:text-xs">
+        <p className="text-sm print:text-xs ">
           मुख्य , बी. 2/3, उद्यान कॉम्प्लेक्स, ससराल
         </p>
       </div>
