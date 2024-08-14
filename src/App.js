@@ -45,6 +45,7 @@ import RojnamaX from "./pages/reportview/makereport/notice/rojx";
 import RoznamaNot from "./pages/reportview/makereport/notice/roznama";
 import NamunaV from "./pages/reportview/makereport/notice/namunaV";
 import NamunaU from "./pages/reportview/makereport/notice/NamunaU";
+import EkSet from "./pages/reportview/makereport/notice/EkSet";
 
 function App() {
   return (
@@ -91,6 +92,7 @@ function App() {
           <Route path="labelprint" element={<Labelprint />} />
           <Route path="registerpavti" element={<RegisterPavti />} />
           <Route path="namuna-u" element={<NamunaU />} />
+          <Route path="ekset" element={<EkSet />} />
           <Route path="notice-1" element={<Notice1 />} />
           {/* FEDRATION */}
           <Route path="fedardash" element={<Fedarationdash />} />

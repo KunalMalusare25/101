@@ -6,7 +6,7 @@ function RegisterPavti() {
   };
 
   return (
-    <div className="container max-w-4xl mx-auto p-4 border border-black mt-5 print:mb-96 print:p-2 print:max-w-full print:border-r-2">
+    <div className="container max-w-7xl mx-auto p-4 border border-black mt-5 print:mb-96 print:p-2 print:max-w-full print:border-r-2">
       <style>{`@media print {
   @page {
     size: A4;
