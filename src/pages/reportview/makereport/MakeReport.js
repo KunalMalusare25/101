@@ -130,7 +130,7 @@ function MakeReport() {
             url: "/labelprint",
           },
           { text: "101 सेट - पूर्ण सेट", color: "bg-red-500" },
-          { text: "101 सेट - नमुना यु", color: "bg-blue-500" },
+          { text: "101 सेट - नमुना यु", color: "bg-blue-500", url: "/namuna-u" },
           {
             text: "रजिस्टर पोच पावतीसह समन्स",
             color: "bg-blue-500",

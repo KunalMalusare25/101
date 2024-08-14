@@ -6,7 +6,26 @@ function RegisterPavti() {
   };
 
   return (
-    <div className="container max-w-4xl mx-auto p-4 border border-black mt-5 print:mt-0 print:p-2 print:max-w-full">
+    <div className="container max-w-4xl mx-auto p-4 border border-black mt-5 print:mb-96 print:p-2 print:max-w-full print:border-r-2">
+      <style>{`@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+   
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+
+  .container {
+    margin-top: 80px !important;
+    padding-top: 0 !important;
+  }
+}`}</style>
       {/* Header Section */}
       <div className="flex justify-end p-4 print:p-0">
         <button
@@ -17,14 +36,14 @@ function RegisterPavti() {
         </button>
       </div>
 
-      <div className="text-center border-b p-4 h-full border border-black print:text-sm print:border-none">
-        <div className="flex print:flex-col">
-          <div className="bg-gray-300 h-40 w-60 border border-black print:h-20 print:w-40 print:text-xs">
+      <div className="text-center border-b p-4 h-full border border-black print:text-sm print:border-none ">
+        <div className="flex print:flex-row print:h-28">
+          <div className="bg-gray-300 h-40 w-60 border border-black print:h-28 print:w-40 print:text-xs print:bg-gray-500">
             <h2 className="font-bold text-xl mt-14 print:mt-5 print:text-lg">
               रजिस्टर पोस्ट पावतीसह समन्स
             </h2>
           </div>
-          <div className="text-left border border-black w-full ml-1 print:ml-0 print:text-xs">
+          <div className="text-left border border-black w-full ml-1 print:ml-0 print:text-xs print:h-28 print:p-1">
             <p>
               सहा.निबंधक सह.संस्था (परसेवा), म.राज्य सह. पतसंस्था फेडरेशन
               मर्या.,
@@ -34,11 +53,11 @@ function RegisterPavti() {
               प्रमिला अपार्टमेंट, ३ रा मजला, लकाकी रोड, मॉंडेल कॉलनी, पुणे., ता.
               पुणे शहर, जि. पुणे
             </p>
-            <div className="mt-10 flex justify-between print:mt-5 print:text-xs">
+            <div className="mt-10 flex justify-between print:mt-7 print:text-xs">
               <p>जा.क्र. वसुली दाखला / १०१ /    / २०</p>
               <p> अर्ज क्रमांक : </p>
               <p className="mr-16">
-                दिनांक - <input type="date" className="print:w-20 print:h-4" />
+                दिनांक - <input type="date" className="print:w-15 print:h-4" />
               </p>
             </div>
           </div>

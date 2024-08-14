@@ -39,6 +39,7 @@ import Challanpage from "./pages/reportview/makereport/notice/Challanpage";
 import Dakhalallnotice from "./pages/reportview/makereport/notice/Dakhalallnotice";
 import Labelprint from "./pages/reportview/makereport/notice/Labelprint";
 import RegisterPavti from "./pages/reportview/makereport/notice/RegisterPavti";
+import NamunaU from "./pages/reportview/makereport/notice/NamunaU";
 
 function App() {
   return (
@@ -79,6 +80,7 @@ function App() {
           <Route path="dakhal" element={<Dakhalallnotice />} />
           <Route path="labelprint" element={<Labelprint />} />
           <Route path="registerpavti" element={<RegisterPavti />} />
+          <Route path="namuna-u" element={<NamunaU />} />
           <Route path="notice-1" element={<Notice1 />} />
           {/* FEDRATION */}
           <Route path="fedardash" element={<Fedarationdash />} />
