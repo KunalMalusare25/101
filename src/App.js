@@ -46,6 +46,7 @@ import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
 import FedarClosedCase from "./pages/fedration/fedarClosed/FedarClosedCase";
 import FedarInprocess from "./pages/fedration/fedarInprocess/FedarInprocess";
 import FedarNewCase from "./pages/fedration/fedarNewcase/FedarNewCase";
+import CasetoAr from "./pages/Case/Casetoar";
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
           <Route path="uploadDoc" element={<UploadDoc />} />
           <Route path="roz" element={<Roznama />} />
           <Route path="old-karwai" element={<Old />} />
+          <Route path="casetoar" element={<CasetoAr />} />
 
           {/* # NOTICES */}
           <Route path="FirstNotice" element={<Firstnotice />} />
