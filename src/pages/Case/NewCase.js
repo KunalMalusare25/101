@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function NewCase() {
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
+  const navigate = useNavigate();
+
   const [tableData, setTableData] = useState([
     {
       caseNumber: "472",
@@ -61,8 +64,6 @@ function NewCase() {
     },
     // Add more rows as needed
   ]);
-  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
-  const navigate = useNavigate();
 
   const toggleDropdown = (index) => {
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
@@ -154,7 +155,7 @@ function NewCase() {
               <p>
                 <span className="font-semibold">Status:</span> {row.status}
               </p>
-              <div className="relative">
+              <div className="relative new-dropdown-container mt-4">
                 <button
                   onClick={() => toggleDropdown(index)}
                   className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-2"
