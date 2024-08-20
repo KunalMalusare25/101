@@ -59,7 +59,7 @@ const Header = () => {
             </li>
             <li className="relative group">
               <span className="cursor-pointer">Case &#9662;</span>
-              <ul className="absolute top-full mt-2 bg-orange-300 text-white border border-gray-400 rounded shadow-lg w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <ul className="absolute top-full mt-2 bg-stone-950 text-white border border-gray-400 rounded shadow-lg w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <li
                   className="p-2 hover:bg-gray-600"
                   onClick={() => handleNavigate("/newcase")}
@@ -94,7 +94,7 @@ const Header = () => {
             </li>
             <li className="relative group">
               <span className="cursor-pointer">Report view &#9662;</span>
-              <ul className="absolute top-full mt-2 bg-orange-300 text-white border border-gray-400 rounded shadow-lg w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <ul className="absolute top-full mt-2 bg-stone-950 text-white border border-gray-400 rounded shadow-lg w-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <li
                   className="p-2 hover:bg-gray-600"
                   onClick={() => handleNavigate("/makereport")}
@@ -126,7 +126,7 @@ const Header = () => {
         {/* Profile Section */}
         <div className="flex items-center space-x-2 lg:space-x-4">
           <img src={profile} alt="profile-image" className="h-8 lg:h-10" />
-          <label className="underline text-white text-sm lg:text-base whitespace-nowrap">
+          <label className="underline text-white text-sm lg:text-base whitespace-nowrap cursor-pointer">
             kunal Malusare
           </label>
         </div>

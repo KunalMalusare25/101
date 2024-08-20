@@ -1,6 +1,7 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
+// society
 import Dashboard from "./pages/Dashboard/dashboard";
 import DefaultLayout from "./pages/DefaultLayout/DefaultLayout";
 import NewCase from "./pages/Case/NewCase";
@@ -11,23 +12,16 @@ import Reject from "./pages/Case/Reject";
 import RejectReason from "./pages/Case/rejectreason/RejectReason";
 import Signin from "./pages/register/signin";
 import Login from "./pages/login/login";
-
 import MakeReport from "./pages/reportview/makereport/MakeReport";
 import Makeexcel from "./pages/reportview/makeexcel/Makeexcel";
 import Inforeport from "./pages/reportview/jaab/Inforeport";
 import Addnc from "./pages/Case/AddCase/addnc";
 import UploadDoc from "./pages/Case/documentupload/UploadDoc";
-
 import Roznama from "./pages/Case/roznama/Roznama";
-
 import Old from "./pages/old/old";
 import Notice1 from "./pages/reportview/makereport/notice/Notice1";
-import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
-
 import Firstnotice from "./pages/reportview/makereport/notice/Firstnotice";
-
 import Antimnotice from "./pages/reportview/makereport/notice/Antimnotice";
-
 import TrdHafta from "./pages/reportview/makereport/notice/3rd_hafta";
 import SndHafta from "./pages/reportview/makereport/notice/2nd_hafta";
 import FirstHafta from "./pages/reportview/makereport/notice/1st_hafta";
@@ -46,6 +40,12 @@ import RoznamaNot from "./pages/reportview/makereport/notice/roznama";
 import NamunaV from "./pages/reportview/makereport/notice/namunaV";
 import NamunaU from "./pages/reportview/makereport/notice/NamunaU";
 import EkSet from "./pages/reportview/makereport/notice/EkSet";
+
+// fedration
+import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
+import FedarClosedCase from "./pages/fedration/fedarClosed/FedarClosedCase";
+import FedarInprocess from "./pages/fedration/fedarInprocess/FedarInprocess";
+import FedarNewCase from "./pages/fedration/fedarNewcase/FedarNewCase";
 
 function App() {
   return (
@@ -83,7 +83,6 @@ function App() {
           <Route path="Namuna_V" element={<NamunaV />} />
 
           {/* notice-section */}
-
           <Route path="kalam" element={<Kalamnotice />} />
           <Route path="challan" element={<Challanpage />} />
           <Route path="Antim-notice" element={<Antimnotice />} />
@@ -94,8 +93,12 @@ function App() {
           <Route path="namuna-u" element={<NamunaU />} />
           <Route path="ekset" element={<EkSet />} />
           <Route path="notice-1" element={<Notice1 />} />
+
           {/* FEDRATION */}
           <Route path="fedardash" element={<Fedarationdash />} />
+          <Route path="fedarnewcase" element={<FedarNewCase />} />
+          <Route path="fedarinprocess" element={<FedarInprocess />} />
+          <Route path="fedarclosedcase" element={<FedarClosedCase />} />
         </Route>
       </Routes>
     </HashRouter>
