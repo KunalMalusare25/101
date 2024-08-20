@@ -183,7 +183,7 @@ function NewCase() {
                         रिपोर्ट तयार करा
                       </li>
                       <li
-                        onClick={() => handleNavigate("/TranferAR")}
+                        onClick={() => handleNavigate("/casetoar")}
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                       >
                         A R ला हस्तांतरित करा
@@ -287,7 +287,7 @@ function NewCase() {
                               रिपोर्ट तयार करा
                             </li>
                             <li
-                              onClick={() => handleNavigate("/TranferAR")}
+                              onClick={() => handleNavigate("/casetoar")}
                               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                             >
                               A R ला हस्तांतरित करा
