@@ -2,13 +2,12 @@ import React from "react";
 
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../../../components/Head/header";
-
-
+// import Feaderhead from "../../fedration/fedarhead/Feaderhead";
 
 function DefaultLayout() {
   const location = useLocation();
   const hideheader = ["/", "/signin"];
-  
+
   return (
     <div>
       <div className={`print-hidden`}>

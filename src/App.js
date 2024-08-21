@@ -49,7 +49,7 @@ import CasetoAr from "./pages/society/Case/Casetoar";
 
 import Dashboard from "./pages/society/Dashboard/dashboard";
 import DefaultLayout from "./pages/society/DefaultLayout/DefaultLayout";
-import { AuthProvider } from "./context/AuthContext";
+import FedarcloseReason from "./pages/fedration/fedarclosedreason/FedarcloseReason";
 
 function App() {
   return (
@@ -105,6 +105,7 @@ function App() {
           <Route path="fedarnewcase" element={<FedarNewCase />} />
           <Route path="fedarinprocess" element={<FedarInprocess />} />
           <Route path="fedarclosedcase" element={<FedarClosedCase />} />
+          <Route path="fedarclosereason" element={<FedarcloseReason />} />
         </Route>
       </Routes>
       </AuthProvider>
