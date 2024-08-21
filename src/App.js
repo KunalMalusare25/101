@@ -55,59 +55,59 @@ function App() {
   return (
     <HashRouter>
       <AuthProvider>
-      <Routes>
-        <Route path="/" element={<DefaultLayout />}>
-          <Route index element={<Login />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="signin" element={<Signin />} />
-          <Route path="newcase" element={<NewCase />} />
-          <Route path="tranferar" element={<TranferAR />} />
-          <Route path="inprocess" element={<Inprocess />} />
-          <Route path="closed" element={<Closed />} />
-          <Route path="reject" element={<Reject />} />
-          <Route path="rejectreason" element={<RejectReason />} />
-          <Route path="makereport" element={<MakeReport />} />
-          <Route path="makeexcel" element={<Makeexcel />} />
-          <Route path="inforeport" element={<Inforeport />} />
-          <Route path="addcase" element={<Addnc />} />
-          <Route path="uploadDoc" element={<UploadDoc />} />
-          <Route path="roz" element={<Roznama />} />
-          <Route path="old-karwai" element={<Old />} />
-          <Route path="casetoar" element={<CasetoAr />} />
+        <Routes>
+          <Route path="/" element={<DefaultLayout />}>
+            <Route index element={<Login />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="signin" element={<Signin />} />
+            <Route path="newcase" element={<NewCase />} />
+            <Route path="tranferar" element={<TranferAR />} />
+            <Route path="inprocess" element={<Inprocess />} />
+            <Route path="closed" element={<Closed />} />
+            <Route path="reject" element={<Reject />} />
+            <Route path="rejectreason" element={<RejectReason />} />
+            <Route path="makereport" element={<MakeReport />} />
+            <Route path="makeexcel" element={<Makeexcel />} />
+            <Route path="inforeport" element={<Inforeport />} />
+            <Route path="addcase" element={<Addnc />} />
+            <Route path="uploadDoc" element={<UploadDoc />} />
+            <Route path="roz" element={<Roznama />} />
+            <Route path="old-karwai" element={<Old />} />
+            <Route path="casetoar" element={<CasetoAr />} />
 
-          {/* # NOTICES */}
-          <Route path="FirstNotice" element={<Firstnotice />} />
-          <Route path="Third-Hafta" element={<TrdHafta />} />
-          <Route path="Second-Hafta" element={<SndHafta />} />
-          <Route path="First-Hafta" element={<FirstHafta />} />
-          <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
-          <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
-          <Route path="Tharav" element={<Tharav />} />
-          <Route path="Jawab" element={<Jawab />} />
-          <Route path="RojnamaX" element={<RojnamaX />} />
-          <Route path="Roznama" element={<RoznamaNot />} />
-          <Route path="Namuna_V" element={<NamunaV />} />
+            {/* # NOTICES */}
+            <Route path="FirstNotice" element={<Firstnotice />} />
+            <Route path="Third-Hafta" element={<TrdHafta />} />
+            <Route path="Second-Hafta" element={<SndHafta />} />
+            <Route path="First-Hafta" element={<FirstHafta />} />
+            <Route path="Magni-Notice-Prakar1" element={<Prakar1 />} />
+            <Route path="Magni-Notice-Prakar2" element={<Prakar2 />} />
+            <Route path="Tharav" element={<Tharav />} />
+            <Route path="Jawab" element={<Jawab />} />
+            <Route path="RojnamaX" element={<RojnamaX />} />
+            <Route path="Roznama" element={<RoznamaNot />} />
+            <Route path="Namuna_V" element={<NamunaV />} />
 
-          {/* notice-section */}
-          <Route path="kalam" element={<Kalamnotice />} />
-          <Route path="challan" element={<Challanpage />} />
-          <Route path="Antim-notice" element={<Antimnotice />} />
-          <Route path="affidavit" element={<Affidavit />} />
-          <Route path="dakhal" element={<Dakhalallnotice />} />
-          <Route path="labelprint" element={<Labelprint />} />
-          <Route path="registerpavti" element={<RegisterPavti />} />
-          <Route path="namuna-u" element={<NamunaU />} />
-          <Route path="ekset" element={<EkSet />} />
-          <Route path="notice-1" element={<Notice1 />} />
+            {/* notice-section */}
+            <Route path="kalam" element={<Kalamnotice />} />
+            <Route path="challan" element={<Challanpage />} />
+            <Route path="Antim-notice" element={<Antimnotice />} />
+            <Route path="affidavit" element={<Affidavit />} />
+            <Route path="dakhal" element={<Dakhalallnotice />} />
+            <Route path="labelprint" element={<Labelprint />} />
+            <Route path="registerpavti" element={<RegisterPavti />} />
+            <Route path="namuna-u" element={<NamunaU />} />
+            <Route path="ekset" element={<EkSet />} />
+            <Route path="notice-1" element={<Notice1 />} />
 
-          {/* FEDRATION */}
-          <Route path="fedardash" element={<Fedarationdash />} />
-          <Route path="fedarnewcase" element={<FedarNewCase />} />
-          <Route path="fedarinprocess" element={<FedarInprocess />} />
-          <Route path="fedarclosedcase" element={<FedarClosedCase />} />
-          <Route path="fedarclosereason" element={<FedarcloseReason />} />
-        </Route>
-      </Routes>
+            {/* FEDRATION */}
+            <Route path="fedardash" element={<Fedarationdash />} />
+            <Route path="fedarnewcase" element={<FedarNewCase />} />
+            <Route path="fedarinprocess" element={<FedarInprocess />} />
+            <Route path="fedarclosedcase" element={<FedarClosedCase />} />
+            <Route path="fedarclosereason" element={<FedarcloseReason />} />
+          </Route>
+        </Routes>
       </AuthProvider>
     </HashRouter>
   );
