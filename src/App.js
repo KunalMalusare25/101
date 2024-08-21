@@ -49,10 +49,12 @@ import CasetoAr from "./pages/society/Case/Casetoar";
 
 import Dashboard from "./pages/society/Dashboard/dashboard";
 import DefaultLayout from "./pages/society/DefaultLayout/DefaultLayout";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <HashRouter>
+      <AuthProvider>
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route index element={<Login />} />
@@ -105,6 +107,7 @@ function App() {
           <Route path="fedarclosedcase" element={<FedarClosedCase />} />
         </Route>
       </Routes>
+      </AuthProvider>
     </HashRouter>
   );
 }
