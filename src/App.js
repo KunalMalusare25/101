@@ -50,6 +50,7 @@ import CasetoAr from "./pages/society/Case/Casetoar";
 import Dashboard from "./pages/society/Dashboard/dashboard";
 import DefaultLayout from "./pages/society/DefaultLayout/DefaultLayout";
 import FedarcloseReason from "./pages/fedration/fedarclosedreason/FedarcloseReason";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
