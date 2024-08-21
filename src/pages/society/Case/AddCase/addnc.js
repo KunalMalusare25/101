@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import JaminInfo from "./jamin";
 import KarjadaarInfo from "./karjadaarInfo";
-import { fetchDistricts, fetchTalukas } from "../../../components/apicall/Api";
+import { fetchDistricts, fetchTalukas } from "../../../../components/apicall/Api";
+
 
 const Addnc = () => {
   const [activeTab, setActiveTab] = useState("thakbakidar");
