@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const CasetoAr = () => {
   return (
@@ -6,9 +6,12 @@ const CasetoAr = () => {
       <div className="bg-teal-600 text-white text-lg font-bold p-2 rounded-t-md">
         केस A R ला हस्तांतरित करा
       </div>
-      <form className="space-y-4">
+      <form className="space-y-4 mt-5">
         <div>
-          <label className="block text-gray-700 font-semibold mb-1" htmlFor="branch">
+          <label
+            className="block text-gray-700 font-semibold mb-1"
+            htmlFor="branch"
+          >
             शाखा निवडा <span className="text-red-500">*</span>
           </label>
           <select
@@ -22,7 +25,10 @@ const CasetoAr = () => {
         </div>
 
         <div>
-          <label className="block text-gray-700 font-semibold mb-1" htmlFor="case">
+          <label
+            className="block text-gray-700 font-semibold mb-1"
+            htmlFor="case"
+          >
             केस निवडा <span className="text-red-500">*</span>
           </label>
           <select
@@ -33,14 +39,17 @@ const CasetoAr = () => {
             <option>Select</option>
             <option>472 जाधव संजय विठ्ठल</option>
             <option>473 पाटील महेश राजेंद्र</option>
-            
+
             {/* Add your options here */}
           </select>
           <p className="text-gray-600 mt-1">Multi Selection of Cases allowed</p>
         </div>
 
         <div>
-          <label className="block text-gray-700 font-semibold mb-1" htmlFor="ar">
+          <label
+            className="block text-gray-700 font-semibold mb-1"
+            htmlFor="ar"
+          >
             A R निवडा <span className="text-red-500">*</span>
           </label>
           <select
@@ -61,7 +70,7 @@ const CasetoAr = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default CasetoAr
+export default CasetoAr;
