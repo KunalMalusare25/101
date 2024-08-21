@@ -2,51 +2,53 @@ import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 // society
-import Dashboard from "./pages/Dashboard/dashboard";
-import DefaultLayout from "./pages/DefaultLayout/DefaultLayout";
-import NewCase from "./pages/Case/NewCase";
-import TranferAR from "./pages/Case/TranferAR";
-import Inprocess from "./pages/Case/Inprocess";
-import Closed from "./pages/Case/Closed";
-import Reject from "./pages/Case/Reject";
-import RejectReason from "./pages/Case/rejectreason/RejectReason";
+
+import NewCase from "./pages/society/Case/NewCase";
+import TranferAR from "./pages/society/Case/TranferAR";
+import Inprocess from "./pages/society/Case/Inprocess";
+import Closed from "./pages/society/Case/Closed";
+import Reject from "./pages/society/Case/Reject";
+import RejectReason from "./pages/society/Case/rejectreason/RejectReason";
 import Signin from "./pages/register/signin";
 import Login from "./pages/login/login";
-import MakeReport from "./pages/reportview/makereport/MakeReport";
-import Makeexcel from "./pages/reportview/makeexcel/Makeexcel";
-import Inforeport from "./pages/reportview/jaab/Inforeport";
-import Addnc from "./pages/Case/AddCase/addnc";
-import UploadDoc from "./pages/Case/documentupload/UploadDoc";
-import Roznama from "./pages/Case/roznama/Roznama";
-import Old from "./pages/old/old";
-import Notice1 from "./pages/reportview/makereport/notice/Notice1";
-import Firstnotice from "./pages/reportview/makereport/notice/Firstnotice";
-import Antimnotice from "./pages/reportview/makereport/notice/Antimnotice";
-import TrdHafta from "./pages/reportview/makereport/notice/3rd_hafta";
-import SndHafta from "./pages/reportview/makereport/notice/2nd_hafta";
-import FirstHafta from "./pages/reportview/makereport/notice/1st_hafta";
-import Prakar1 from "./pages/reportview/makereport/notice/Prakar1";
-import Prakar2 from "./pages/reportview/makereport/notice/Prakar2";
-import Kalamnotice from "./pages/reportview/makereport/notice/Kalamnotice";
-import Affidavit from "./pages/reportview/makereport/notice/Affidavit";
-import Challanpage from "./pages/reportview/makereport/notice/Challanpage";
-import Dakhalallnotice from "./pages/reportview/makereport/notice/Dakhalallnotice";
-import Labelprint from "./pages/reportview/makereport/notice/Labelprint";
-import RegisterPavti from "./pages/reportview/makereport/notice/RegisterPavti";
-import Tharav from "./pages/reportview/makereport/notice/tharav";
-import Jawab from "./pages/reportview/makereport/notice/jawab";
-import RojnamaX from "./pages/reportview/makereport/notice/rojx";
-import RoznamaNot from "./pages/reportview/makereport/notice/roznama";
-import NamunaV from "./pages/reportview/makereport/notice/namunaV";
-import NamunaU from "./pages/reportview/makereport/notice/NamunaU";
-import EkSet from "./pages/reportview/makereport/notice/EkSet";
+import MakeReport from "./pages/society/reportview/makereport/MakeReport";
+import Makeexcel from "./pages/society/reportview/makeexcel/Makeexcel";
+import Inforeport from "./pages/society/reportview/jaab/Inforeport";
+import Addnc from "./pages/society/Case/AddCase/addnc";
+import UploadDoc from "./pages/society/Case/documentupload/UploadDoc";
+import Roznama from "./pages/society/Case/roznama/Roznama";
+import Old from "./pages/society/old/old";
+import Notice1 from "./pages/society/reportview/makereport/notice/Notice1";
+import Firstnotice from "./pages/society/reportview/makereport/notice/Firstnotice";
+import Antimnotice from "./pages/society/reportview/makereport/notice/Antimnotice";
+import TrdHafta from "./pages/society/reportview/makereport/notice/3rd_hafta";
+import SndHafta from "./pages/society/reportview/makereport/notice/2nd_hafta";
+import FirstHafta from "./pages/society/reportview/makereport/notice/1st_hafta";
+import Prakar1 from "./pages/society/reportview/makereport/notice/Prakar1";
+import Prakar2 from "./pages/society/reportview/makereport/notice/Prakar2";
+import Kalamnotice from "./pages/society/reportview/makereport/notice/Kalamnotice";
+import Affidavit from "./pages/society/reportview/makereport/notice/Affidavit";
+import Challanpage from "./pages/society/reportview/makereport/notice/Challanpage";
+import Dakhalallnotice from "./pages/society/reportview/makereport/notice/Dakhalallnotice";
+import Labelprint from "./pages/society/reportview/makereport/notice/Labelprint";
+import RegisterPavti from "./pages/society/reportview/makereport/notice/RegisterPavti";
+import Tharav from "./pages/society/reportview/makereport/notice/tharav";
+import Jawab from "./pages/society/reportview/makereport/notice/jawab";
+import RojnamaX from "./pages/society/reportview/makereport/notice/rojx";
+import RoznamaNot from "./pages/society/reportview/makereport/notice/roznama";
+import NamunaV from "./pages/society/reportview/makereport/notice/namunaV";
+import NamunaU from "./pages/society/reportview/makereport/notice/NamunaU";
+import EkSet from "./pages/society/reportview/makereport/notice/EkSet";
 
 // fedration
 import Fedarationdash from "./pages/fedration/fedardash/Fedarationdash";
 import FedarClosedCase from "./pages/fedration/fedarClosed/FedarClosedCase";
 import FedarInprocess from "./pages/fedration/fedarInprocess/FedarInprocess";
 import FedarNewCase from "./pages/fedration/fedarNewcase/FedarNewCase";
-import CasetoAr from "./pages/Case/Casetoar";
+import CasetoAr from "./pages/society/Case/Casetoar";
+
+import Dashboard from "./pages/society/Dashboard/dashboard";
+import DefaultLayout from "./pages/society/DefaultLayout/DefaultLayout";
 
 function App() {
   return (
