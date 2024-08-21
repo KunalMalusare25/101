@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { luser } from "../../components/apicall/Api";
+import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const { setUser } = useAuth();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,10 +29,15 @@ const Login = () => {
         pwd: formData.password,
       };
       const response = await luser(payload);
-      console.log("Login Response:", response);
+      setUser(response?.Message);
+      // console.log("Login Response:", response);
 
       if (response.Success) {
-        navigate("/dashboard");
+        {
+          response?.Message?.User?.societycode
+            ? navigate("/dashboard")
+            : navigate("/fedardash");
+        }
       } else {
         setError("Invalid username or password");
       }

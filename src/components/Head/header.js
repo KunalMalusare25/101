@@ -2,12 +2,13 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import profile from "../../images/ProfileIcon.png";
 import hamburgerIcon from "../Head/images/hamburger-icon.png";
+import { useAuth } from "../../context/AuthContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-
+  const { user } = useAuth();
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
     document.body.style.overflow = !isMobileMenuOpen ? "hidden" : "auto";
@@ -142,7 +143,7 @@ const Header = () => {
         <div className="flex items-center space-x-2 lg:space-x-4">
           <img src={profile} alt="profile-image" className="h-8 lg:h-10" />
           <label className="underline text-white text-sm lg:text-base whitespace-nowrap cursor-pointer">
-            kunal Malusare
+            {user?.descn || "Guest"}
           </label>
         </div>
 
