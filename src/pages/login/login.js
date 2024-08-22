@@ -30,7 +30,7 @@ const Login = () => {
       };
       const response = await luser(payload);
       setUser(response?.Message);
-      // console.log("Login Response:", response);
+      console.log("Login Response:", response);
 
       if (response.Success) {
         {

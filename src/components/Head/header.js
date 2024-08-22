@@ -142,9 +142,22 @@ const Header = () => {
         {/* Profile Section */}
         <div className="flex items-center space-x-2 lg:space-x-4">
           <img src={profile} alt="profile-image" className="h-8 lg:h-10" />
-          <label className="underline text-white text-sm lg:text-base whitespace-nowrap cursor-pointer">
+          <label
+            className="underline text-white text-sm lg:text-base whitespace-nowrap cursor-pointer"
+            onClick={() => toggleDropdown(3)}
+          >
             {user?.descn || "Guest"}
           </label>
+          {activeDropdown === 3 && (
+            <ul className="absolute top-full bg-red-600 text-white border border-gray-400  shadow-lg w-32 dropdown rounded-md">
+              <li
+                className="p-2 hover:bg-gray-600 cursor-pointer text-center"
+                onClick={() => handleNavigate("/")}
+              >
+                LOGOUT
+              </li>
+            </ul>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -242,6 +255,26 @@ const Header = () => {
                 </span>
               </li>
             </ul>
+            {/* Profile Section */}
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <img src={profile} alt="profile-image" className="h-8 lg:h-10" />
+              <label
+                className="underline text-white text-sm lg:text-base whitespace-nowrap cursor-pointer"
+                onClick={() => toggleDropdown(3)}
+              >
+                {user?.descn || "Guest"}
+              </label>
+              {activeDropdown === 3 && (
+                <ul className="absolute top-full bg-red-600 text-white border border-gray-400  shadow-lg w-32 dropdown rounded-md ">
+                  <li
+                    className="p-2 hover:bg-gray-600 cursor-pointer text-center"
+                    onClick={() => handleNavigate("/")}
+                  >
+                    LOGOUT
+                  </li>
+                </ul>
+              )}
+            </div>
           </div>
         )}
       </header>
