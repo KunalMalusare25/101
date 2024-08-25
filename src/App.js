@@ -51,11 +51,13 @@ import Dashboard from "./pages/society/Dashboard/dashboard";
 import DefaultLayout from "./pages/society/DefaultLayout/DefaultLayout";
 import FedarcloseReason from "./pages/fedration/fedarclosedreason/FedarcloseReason";
 import { AuthProvider } from "./context/AuthContext";
+import { DistrictTalukaProvider } from "./context/DistrictTalukaContext";
 
 function App() {
   return (
     <HashRouter>
       <AuthProvider>
+      <DistrictTalukaProvider>
         <Routes>
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<Login />} />
@@ -109,6 +111,7 @@ function App() {
             <Route path="fedarclosereason" element={<FedarcloseReason />} />
           </Route>
         </Routes>
+        </DistrictTalukaProvider>
       </AuthProvider>
     </HashRouter>
   );

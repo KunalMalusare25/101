@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AddUpdate_society,
-  fetchDistricts,
-  fetchTalukas,
 } from "../../components/apicall/Api";
+import { useDistrictTaluka } from "../../context/DistrictTalukaContext";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const {
+    districts,
+    talukas,
+    setSelectedDistrict,
+  } = useDistrictTaluka();
+  
   const [selectedType, setSelectedType] = useState("S");
   const [sansthaType, setSansthaType] = useState("");
   const [formData, setFormData] = useState({
@@ -21,44 +26,11 @@ const Signin = () => {
     pincode: "411043", // Hardcoded value for now
     contactperson: "",
     contactemail: "",
-    contactmobile: "9822938333",
+    contactmobile: "",
     district: "",
     taluka: "",
     active: true,
   });
-
-  const [districts, setDistricts] = useState([]);
-  const [talukas, setTalukas] = useState([]);
-
-  useEffect(() => {
-    const loadDistracts = async () => {
-      try {
-        const response = await fetchDistricts();
-        setDistricts(response.Message);
-      } catch (error) {
-        console.error("Error fetching districts:", error);
-      }
-    };
-
-    loadDistracts();
-  }, []);
-
-  useEffect(() => {
-    if (formData.district) {
-      const loadTalukas = async () => {
-        try {
-          const response = await fetchTalukas(formData.district);
-          setTalukas(response.Message);
-        } catch (error) {
-          console.error("Error fetching talukas:", error);
-        }
-      };
-
-      loadTalukas();
-    } else {
-      setTalukas([]); // Clear talukas when no district is selected
-    }
-  }, [formData.district]);
 
   const handleLogin = () => {
     navigate("/");
@@ -78,11 +50,16 @@ const Signin = () => {
       ...prevFormData,
       [name]: value,
     }));
+    if (name === "district") {
+      setSelectedDistrict(value);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     try {
+
       const payload = {
         data: [
           {
@@ -93,7 +70,6 @@ const Signin = () => {
             descn1: formData.descn1,
             pan: formData.pan,
             gstn: formData.gstn,
-            phone: formData.phone,
             district_id: formData.district,
             taluka_id: formData.taluka,
             address: formData.address,
@@ -101,12 +77,12 @@ const Signin = () => {
             pincode: formData.pincode,
             contactperson: formData.contactperson,
             contactemail: formData.contactemail,
-            contactmobile: formData.contactmobile,
+            contactmobile: formData.phone,
             active: formData.active,
           },
         ],
       };
-
+      console.log(payload)
       const response = await AddUpdate_society(payload);
       if (response.Success === true) {
         navigate("/");

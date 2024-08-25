@@ -1,7 +1,7 @@
 // AuthContext.js
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { luser } from "../components/apicall/Api";
-import { useNavigate } from "react-router-dom";
+// import { luser } from "../components/apicall/Api";
+// import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -20,7 +20,9 @@ export const AuthProvider = ({ children }) => {
         isAuthenticated,
 
         userRole,
+        setUserRole,
         userName,
+        setUserName,
         setUser,
         user,
       }}
