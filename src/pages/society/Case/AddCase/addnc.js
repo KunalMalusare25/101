@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import JaminInfo from "./jamin";
 import KarjadaarInfo from "./karjadaarInfo";
-import { fetchDistricts, fetchTalukas } from "../../../../components/apicall/Api";
+import { useDistrictTaluka } from "../../../../context/DistrictTalukaContext";
 
 
 const Addnc = () => {
   const [activeTab, setActiveTab] = useState("thakbakidar");
+  const { districts, talukas, setSelectedDistrict } = useDistrictTaluka();
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -14,39 +15,6 @@ const Addnc = () => {
     district: "",
     taluka: "",
   });
-  const [districts, setDistricts] = useState([]);
-  const [talukas, setTalukas] = useState([]);
-
-  useEffect(() => {
-    const loadDistracts = async () => {
-      try {
-        const response = await fetchDistricts();
-        console.log(response);
-        setDistricts(response.Message);
-      } catch (error) {
-        console.error("Error fetching districts:", error);
-      }
-    };
-
-    loadDistracts();
-  }, []);
-
-  useEffect(() => {
-    if (formData.district) {
-      const loadTalukas = async () => {
-        try {
-          const response = await fetchTalukas(formData.district);
-          setTalukas(response.Message);
-        } catch (error) {
-          console.error("Error fetching talukas:", error);
-        }
-      };
-
-      loadTalukas();
-    } else {
-      setTalukas([]); // Clear talukas when no district is selected
-    }
-  }, [formData.district]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -54,6 +22,9 @@ const Addnc = () => {
       ...prevFormData,
       [name]: value,
     }));
+    if (name === "district") {
+      setSelectedDistrict(value);
+    }
   };
 
   return (

@@ -32,12 +32,11 @@ const Login = () => {
       setUser(response?.Message);
       console.log("Login Response:", response);
 
-      if (response.Success) {
+      if (response.Success) 
         {
           response?.Message?.User?.societycode
             ? navigate("/dashboard")
             : navigate("/fedardash");
-        }
       } else {
         setError("Invalid username or password");
       }

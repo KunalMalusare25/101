@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDistrictTaluka } from "../../../../context/DistrictTalukaContext";
 
 function MakeReport() {
+
+  const { districts, talukas, setSelectedDistrict } = useDistrictTaluka();
+
+  const [formData, setFormData] = useState({
+    district: "",
+    taluka: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    if (name === "district") {
+      setSelectedDistrict(value);
+    }
+  };
+
   const navigate = useNavigate();
+
 
   const handleButtonClick = (url) => {
     // If you are using external links
@@ -72,18 +93,39 @@ function MakeReport() {
           <label className="font-bold text-sm mb-1">
             वसुली दाखला देणाऱ्या कार्यालयाचा जिल्हा
           </label>
-          <select className="p-2 border border-gray-300 rounded">
+          <select className="p-2 border border-gray-300 rounded"
+            name="district"
+            value={formData.district}
+            onChange={handleChange}
+          >
             <option>जिल्हा निवडा / Select Jilha</option>
-            {/* Add options dynamically if needed */}
+            {districts.map((district) => (
+                        <option key={district.code} value={district.code}>
+                          {district.descn}
+                        </option>
+                        ))}
           </select>
         </div>
         <div className="flex flex-col">
           <label className="font-bold text-sm mb-1">
             वसुली दाखला देणाऱ्या कार्यालयाचा तालुका
           </label>
-          <select className="p-2 border border-gray-300 rounded">
-            <option>तालुका निवडा / Select Taluka</option>
-            {/* Add options dynamically if needed */}
+          <select className="p-2 border border-gray-300 rounded"
+            name="taluka"
+            value={formData.taluka}
+            onChange={handleChange}
+            disabled={!formData.district}
+          >
+            <option value="" disabled>
+                        {formData.district
+                          ? "तालुका निवडा / Select Taluka"
+                          : "Select a District First"}
+                      </option>
+                      {talukas.map((taluka) => (
+                        <option key={taluka.code} value={taluka.code}>
+                          {taluka.descn}
+                        </option>
+                      ))}
           </select>
         </div>
         <div className="flex flex-col">
