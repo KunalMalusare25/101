@@ -95,12 +95,12 @@ function Feaderhead() {
           <img src={profile} alt="profile-image" className="h-8 lg:h-10" />
           <label
             className="underline text-white text-sm lg:text-base whitespace-nowrap cursor-pointer"
-            onClick={() => toggleDropdown(3)}
+            onClick={() => toggleDropdown(1)}
           >
             {user?.descn || "Guest"}
           </label>
-          {activeDropdown === 3 && (
-            <ul className="absolute top-full bg-red-600 text-white border border-gray-400  shadow-lg w-32 dropdown rounded-md right-0">
+          {activeDropdown === 1 && (
+            <ul className="absolute top-full bg-red-600 text-white border border-gray-400  shadow-lg w-32 dropdown rounded-md">
               <li
                 className="p-2 hover:bg-gray-600 cursor-pointer text-center"
                 onClick={() => handleNavigate("/")}
